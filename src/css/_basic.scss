@@ -1,0 +1,20 @@
+
+body {
+  a {
+    color: $brand-green;
+    &:hover {
+      text-decoration: none;
+      color: $c-green-light;
+    }
+  }
+}
+
+h4, 
+h5, 
+h6 { 
+  font-size: 16px;
+}
+
+.page-title {
+  margin: 20px 0;
+}

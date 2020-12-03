@@ -1,12 +1,13 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import './colorbox.scss';
 
 
 const Colorbox = ({ backgroundColor , textColor, internalSpacing , boxContent }) => {
-  
+  const bgcolor = {
+    backgroundColor: backgroundColor,
+  }
   return (
-    <div>
-      {backgroundColor }
+    <div className='colored-box' data-internal-spacing={internalSpacing} data-text-color={textColor} style={bgcolor}>
       {boxContent }
     </div>
   );

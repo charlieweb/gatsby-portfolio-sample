@@ -1,0 +1,175 @@
+// The mdia mixin
+@mixin media($args...) {
+  $query: "";
+
+  @each $arg in $args {
+    $op: "";
+
+    @if ($query !="") {
+      $op: " and ";
+    }
+
+    $query: $query+$op+translate-media-condition($arg);
+  }
+
+  @media #{$query} {
+    @content;
+  }
+}
+
+// Breakpoints variables
+$xs: 0;
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$xl: 1200px;
+$max-width: $xl;
+
+$breakpoints: (xs: $xs,
+  sm: $small,
+  md: $medium,
+  lg: $large,
+  xl: $xl);
+
+$container-widths: (sm: $small - 36px, // 540px
+  md: $medium - 48px, // 720px
+  lg: $large - 32px, // 960px,
+  xl: $xl - 30px // 1170px
+);
+
+$container-widths--gte-md: (md: get-container('md'),
+  lg: get-container('lg'),
+  xl: get-container('xl'),
+);
+
+$container-widths--gte-lg: (lg: get-container('lg'),
+  xl: get-container('xl'),
+);
+
+$container-widths--gte-xl: (xl: get-container('xl'),
+);
+
+/// Function to return a container width from $container-widths.
+/// @example
+///   get-container($name);
+@function get-container($name) {
+  @if map_has_key($container-widths, $name) {
+    @return map-get($container-widths, $name);
+  }
+
+  @warn 'Container width `#{$name}` does not exist.';
+
+  @return null;
+}
+
+/// Mixin to return a container widths.
+/// @example
+///   container(80); // for 80%
+///   container($widths: $container-widths--gte-lg); // for 100%, but only for lg & xl
+@mixin container($percent: 100, $widths: $container-widths) {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  @each $label,
+  $width in $widths {
+    @include media('>=#{$label}') {
+      max-width: get-container(#{$label}) * $percent * 0.01;
+
+      // The first width has 0 padding.
+      @if index(($widths), ($label $width))==1 {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@mixin row($gutter: 15px) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -#{$gutter};
+  margin-left: -#{$gutter};
+}
+
+// $gutter in 'px'
+// $size in '%'
+@mixin col($gutter: 15px, $size: false) {
+  position: relative;
+  width: 100%;
+  padding-right: $gutter;
+  padding-left: $gutter;
+
+  @if $size {
+    flex: 0 0 $size;
+    max-width: $size;
+  }
+}
+
+/// Display the active breakpoint in the bottom right of the viewport.
+@mixin display-breakpoints {
+  body {
+    &::before {
+      position: fixed;
+      right: 3px;
+      bottom: 3px;
+      padding: 1px 9px 3px;
+      border-radius: 3px;
+      background-color: #aaa;
+      color: #fff;
+      font-size: 13px;
+      opacity: 0.5;
+      z-index: 9999;
+
+      // Loop through the breakpoints that should be shown
+      @each $bp-name,
+      $bp-width in $breakpoints {
+        @include media('>=#{$bp-name}') {
+          content: '#{$bp-name}';
+        }
+      }
+    }
+  }
+}
+
+/// Mixin - xs Breakpoint
+/// Allows easier @include xs {} syntax
+@mixin xs {
+  @include media('<sm') {
+    @content;
+  }
+}
+
+/// Mixin - small Breakpoint
+/// Allows easier @include small {} syntax
+@mixin small {
+  @include media('>=sm') {
+    @content;
+  }
+}
+
+/// Mixin - medium Breakpoint
+/// Allows easier @include medium {} syntax
+@mixin medium {
+  @include media('>=md') {
+    @content;
+  }
+}
+
+/// Mixin - large Breakpoint
+/// Allows easier @include large {} syntax
+@mixin large {
+  @include media('>=lg') {
+    @content;
+  }
+}
+
+/// Mixin - xl Breakpoint
+/// Allows easier @include xl {} syntax
+@mixin xl {
+  @include media('>=xl') {
+    @content;
+  }
+}

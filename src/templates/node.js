@@ -1,13 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Helmet from 'react-helmet'
+import SEO from '../components/seo'
 import Layout from '../components/layout/layout'
 import PageFull from '../components/page/PageFull'
 
 export const query = graphql`
    query pages($id: String!) {
     nodePage(id: {eq: $id}) {
+        id
         title
+        path {
+          alias
+        }
         field_secondary_title
         field_hero_text_color
         field_hero_background_color
@@ -22,7 +28,21 @@ export const query = graphql`
             field_background_color
             field_text_color
             relationships {
+              field_background_image {
+                relationships {
+                  field_image {
+                    localFile {
+                      childImageSharp {
+                        fluid(maxWidth: 1500, quality: 100) {
+                           ...GatsbyImageSharpFluid_withWebp
+                        }
+                      }
+                    }
+                  }
+                }
+              }
               field_rows {
+                id
                 type: __typename
                 ...paragraphRowFragment
               }
@@ -33,11 +53,19 @@ export const query = graphql`
   }
 `;
 
-const NodeTemplate = ({ data }) => {
+const NodeTemplate = ({ data, pageContext }) => {
+  const {isFront} = pageContext;
   const node = data.nodePage;
   return (
     <Layout>
-      <PageFull {...node} />
+      
+       <Helmet
+        bodyAttributes={{
+         class: isFront ? 'path-frontpage' : node.title.replace(/\s+/g, '-').toLowerCase(),
+         }}
+       />
+      <SEO title={node.title}/>
+      <PageFull {...node} isFront = {isFront} />
     </Layout>
   );
 };

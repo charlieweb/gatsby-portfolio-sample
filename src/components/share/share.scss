@@ -1,0 +1,17 @@
+.social__share {
+  display: flex;
+  align-items: center;
+  button {
+    margin: 0;
+  }
+  .icon {
+    margin-left: 40px;
+    svg {
+      color: $brand-green;
+      font-size: 22px;
+      &:hover {
+        color: $dark-black;
+      }
+    }
+  }
+}

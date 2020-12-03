@@ -4,11 +4,27 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Chapter Three`,
-    description: `This project pulls data from a Drupal site running on http://nginx.`,
+    description: `Why you want to work here We have a down-to-earth, unconventional company culture. 
+    We embrace those with a passion for doing excellent work. Have a great idea? 
+    We support team members who bring strong ideas to the table and run with them.
+     We’re looking for innovators who want to build their skills and grow with our Internet A-team.`,
     author: ``,
+    twitterHandle:`@chapter_three`,
+    siteURL: `http://frontend.lndo.site`,
+    twitter: `https://twitter.com/chapter_three`,
+    linkedin: `https://www.linkedin.com/company/chapter-three/`,
+    instagram: `https://www.instagram.com/chapter_three_sf/`,
+    facebook: `https://www.facebook.com/Ch.Three`,
+
+
   },
   plugins: [
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        data: `@import "${__dirname}/src/css/global";`,
+      }
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-react-svg',
     `gatsby-transformer-sharp`,
@@ -27,7 +43,6 @@ module.exports = {
         baseUrl: `http://c3.lndo.site/`,
         apiBase: `jsonapi`, // optional, defaults to `jsonapi`
         preview: true,
-        skipFileDownloads: true,
       },
     },
     {
@@ -40,11 +55,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-drupal`,
-        short_name: `drupal`,
+        name: `Chapter Three`,
+        short_name: `chapterthree`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fff`,
+        theme_color: `#15616f`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },

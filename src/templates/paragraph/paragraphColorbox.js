@@ -6,7 +6,8 @@ import { getParagraph } from '../paragraphHelpers'
 
 export const ColorboxParagraph = ({ node }) => {
   
-   const item = Array.of(node.relationships.field_box_content)
+   const item = Array.of(node.relationships.field_box_content);
+   
    let boxes = item.map(box => {
     return getParagraph({
       ...box,
@@ -37,6 +38,7 @@ export const fragment = graphql`
       field_box_content {
         type: __typename
          ...paragraphTextFragment
+         ...paragraphImageFragment
       }
     }
   }

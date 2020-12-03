@@ -18,6 +18,12 @@ export const paragraphRowFragment = graphql`
                 type: __typename
                 ...paragraphTextFragment
                 ...paragraphColoredBoxFragment
+                ...paragraphImageFragment
+                ...paragraphAnchorFragment
+                ...paragraphImageTextFragment
+                ...paragraphNumberTileFragment
+                ...paragraphLinkFragment
+                ...paragraphUserFragment
             }
         }
     }
@@ -41,11 +47,11 @@ const ParagraphRow = ( node ) => {
             topSpacing={field_row_top_spacing}
             bottomSpacing={field_row_bottom_spacing}
             contentSpacing={field_row_content_spacing}
-            contentWidth={field_content_width}
+            contentwidth={field_content_width}
             contentBorders={field_content_borders}
             utilityClasses={[field_css_class]}
          >
-            { paragraphs }
+          { paragraphs }
          </Slicerow>
      )
    

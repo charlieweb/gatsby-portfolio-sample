@@ -4,16 +4,16 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// Based on
-// https://www.ryanbateman.space/blog/tutorial-gatsbyjs-for-drupalers-or-how-to-jamstack-ify-your-drupal-site-with-gatsbyjs/
 
 const path = require('path');
-const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
+const { createRemoteFileNode } = require(`gatsby-source-filesystem`);
+const { array } = require('prop-types');
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const result = await graphql(`
     query {
       
       blognode: allNodeBlogPost(filter: {status: {eq: true}} sort: {order: DESC,fields: created}) {
+        totalCount
         edges {
           node {
           id
@@ -37,7 +37,45 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
 
+      workpages: allNodeWork(filter: {status: {eq: true}} sort: {order:DESC, fields:created}) {
+        nodes {
+          id
+          drupal_internal__nid
+          path{
+            alias
+          }
+        }
+      }
+      jobs: allNodeJobPosting(filter: {status: {eq: true}} sort: {order:DESC, fields:created}) {
+        nodes {
+          id
+          path{
+            alias
+          }
+        }
+      }
+      allusers: allUserUser(filter:{field_listing_placement:{ne:null, nin:"none"}} sort:{order:ASC fields:[field_listing_placement, field_first_name]}) {
+         nodes {
+           id
+           path{
+            alias
+          }
+         }
+      }
+      blogtags: allTaxonomyTermBlogCategory(sort: {order: ASC, fields: weight}) {
+        edges {
+          node {
+            id
+            name
+            path {
+              alias
+            }
+          }
+        }
+      }
+
     }
+    
   `);
 
   if (result.errors) {
@@ -48,18 +86,28 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   
   const blogposts = result.data.blognode.edges;
   const pagesnode = result.data.pages.nodes;
+  const workpage = result.data.workpages.nodes;
+  const jobspage = result.data.jobs.nodes;
+  const userpeople = result.data.allusers.nodes;
+  const categories = result.data.blogtags.edges.map(({node}) => node);
+  const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
+  const pageCount = Math.ceil(result.data.blognode.totalCount/pageSize);
+  const tags = result.data.blogtags.edges;
+  const { createPage } = actions;
+
+  
 
   // Blog Pages
-  const { createPage } = actions;
   blogposts.map(page =>
     createPage({
       path: page.node.path.alias,
-      component: path.resolve(`./src/templates/blog.js`),
+      component: path.resolve(`./src/templates/blog-node.js`),
       context: {
-        id: page.node.drupal_internal__nid.toString(),
+        id: page.node.id,
       },
     })
   );
+
 
   // Basic page nodes
   pagesnode.map(pageitem =>{
@@ -77,5 +125,85 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
    });
+
+   
+
+   // Work page nodes
+  workpage.map(work =>{
+    if (!work.path.alias) {
+      return
+    }
+    const url = work.path.alias;
+    
+    createPage({
+      path: url,
+      component: path.resolve(`./src/templates/work.js`),
+      context: {
+        id: work.id,
+      },
+    })
+   });
+
+     // Jobs Page
+  jobspage.map(job =>{
+    if (!job.path.alias) {
+      return
+    }
+    const url = job.path.alias;
+    
+    createPage({
+      path: url,
+      component: path.resolve(`./src/templates/job.js`),
+      context: {
+        id: job.id,
+      },
+    })
+   });
+
+  // User nodes
+   userpeople.map(user =>{
+    if (!user.path.alias) {
+      return
+    }
+    const url = user.path.alias;
+    
+    createPage({
+      path: url,
+      component: path.resolve(`./src/templates/user.js`),
+      context: {
+        id: user.id,
+      },
+    })
+   });
+
+  // field category in blogs
+  tags.forEach((tag) =>{
+     if (!tag.node.path.alias) {
+      return
+    }
+    createPage({
+      path: tag.node.path.alias,
+      component: path.resolve(`./src/templates/blog.js`),
+      context: {
+        tagname: tag.node.name,
+        tagRegex: `/${tag.node.name}/i`,
+        tagAlias: tag.node.path.alias,
+      },
+    })
+  });
+
+  Array.from({length: pageCount}).forEach((_, i) => {
+     createPage({
+      path: i === 0 ? `/blog` :  `/blog/page/${i + 1}`,
+      component:  path.resolve(`./src/templates/blog.js`),
+      context: {
+        skip: i * pageSize,
+        currentPage: i + 1,
+        pageSize,
+        categories,
+      }
+     })
+   });
+
 
 }

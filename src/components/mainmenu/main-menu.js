@@ -23,10 +23,11 @@ export default function Menu() {
   
   return (
     <>
-     <ul>
+    <nav className="nav">
+     <ul className="main__menu">
       <MenuItem menulist = { menudata } />
      </ul>
-      
+    </nav>
     </>
   )
 }
