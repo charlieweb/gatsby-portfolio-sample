@@ -10,6 +10,8 @@ export const ParagraphImageText = ({ node }) =>  {
       imagelayout: node.field_image_title_text_layout,
       image: field_image.localFile ? field_image.localFile.childImageSharp.fluid : null,
       description: node.field_long_text.processed,
+      BGcolor: node.field_color_image_bg,
+      alt: node.relationships.field_image.field_image.alt
     }
     return(
       <ImageText
@@ -34,11 +36,15 @@ export const fragment = graphql`
     }
     field_title
     field_image_title_text_layout
+    field_color_image_bg
     field_long_text {
       processed
     }
     relationships {
       field_image {
+        field_image {
+            alt
+          }
         relationships {
           field_image {
             localFile {

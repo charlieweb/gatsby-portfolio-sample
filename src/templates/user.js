@@ -37,7 +37,7 @@ export const query = graphql`
             field_image_hero {
               localFile {
                  childImageSharp {
-                   fluid(maxWidth: 300, quality: 100) {
+                   fluid(maxWidth: 355, maxHeight: 230, cropFocus: CENTER, quality: 100) {
                      ...GatsbyImageSharpFluid_withWebp
                    }
                  }
@@ -63,7 +63,8 @@ export const query = graphql`
 
 export default function Userpage({ data }) {
   const user = data.userUser;
-  const user_title = user.field_first_name + ' ' + user.field_last_name
+  const last_name= user.field_last_name ?  user.field_last_name : '';
+  const user_title = user.field_first_name + ' ' + last_name
   return (
   <Layout>
       <Helmet

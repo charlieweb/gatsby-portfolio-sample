@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import SEO from '../components/seo'
 import Layout from '../components/layout/layout'
-import JobsPage from '../components/page/PageJob';
+import JobsPage from '../components/job/PageJob';
 
 
 export const query = graphql`

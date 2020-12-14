@@ -95,7 +95,7 @@ const Userslide = props => {
               
             ))}
             </Slider>
-            <div className='container'><Link className='btn__link' to='/ourteam'>See all Team members</Link></div>
+            <div className='container'><Link className='btn__link' to='/about/team'>See all Team members</Link></div>
             
           </div>
         </div>

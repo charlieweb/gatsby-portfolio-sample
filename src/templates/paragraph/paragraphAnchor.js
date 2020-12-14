@@ -8,15 +8,13 @@ export const paragraphAnchorFragment = graphql`
     }
 `;
 
-export const ParagraphAnchorDataFormatter = (data) => {
-    return {
-        id: data.id,
-        anchor: data.field_id,
-    }
-};
+export const ParagraphAnchor = ({node}) => {
+  return (
+   <>
+   <span id={node.field_id} className="invisible">{node.field_id}</span>
+   </>
+  );
+}
 
-const ParagraphAnchor = ({id, anchor}) => (
-    <span id={anchor} className="invisible">{anchor}</span>
-);
 
 export default ParagraphAnchor;

@@ -1,0 +1,5 @@
+.slice__wrapper {
+  &[data-background-color='lt-grey'] {
+    background:$gray-light;
+  }
+}

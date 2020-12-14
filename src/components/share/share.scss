@@ -1,14 +1,18 @@
 .social__share {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  width: 120px;
+  padding-left: 20px;
+  justify-content: space-between;
+  flex: 1;
   button {
     margin: 0;
   }
   .icon {
-    margin-left: 40px;
     svg {
       color: $brand-green;
-      font-size: 22px;
+      font-size: 25px;
       &:hover {
         color: $dark-black;
       }

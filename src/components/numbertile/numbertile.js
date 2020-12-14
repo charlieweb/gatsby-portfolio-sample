@@ -4,7 +4,6 @@ import {Link } from 'gatsby'
 import './numbertile.scss';
 
 const NumberTile = ({ title, links, description }) => {
-  console.log(links)
  return (
    <div className='numbered-tile'>
      <h3 className='numbered-tile__title'>

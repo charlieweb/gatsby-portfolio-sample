@@ -1,0 +1,40 @@
+.textlink {
+  font-size: 20px;
+  color: $c-dark-gray;
+  letter-spacing: 0;
+  line-height: 30px;
+  background: $c-white;
+  box-shadow: 0 10px 30px 10px rgba(16, 0, 0, 0.10);
+  border-radius: 2px;
+  padding: 30px;
+
+  &__description {
+    li {
+      list-style: none;
+      position: relative;
+    }
+
+    li:before {
+      content: '\f00c';
+      font-family: 'Font Awesome 5 free';
+      position: absolute;
+      margin-left: -30px;
+      color: $c-orange;
+    }
+  }
+  &__link {
+    margin: 30px 0;
+    a {
+      color: $c-white;
+      border-radius: 20px;
+      background: $c-dark-gray;
+      padding: 5px 10px;
+      display: block;
+      text-align: center;
+      @include media-breakpoint-up(md) {
+        display: inline-block;
+        padding: 10px 20px;
+      }
+    }
+  }
+}

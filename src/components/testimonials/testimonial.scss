@@ -1,0 +1,29 @@
+.testimonial {
+  padding: 40px 60px;
+  color: $light-black;
+  &__description {
+    font-size: 24px;
+    margin-bottom: 40px;
+    position: relative;
+    .icon {
+      position: absolute;
+      font-size: 80px;
+      margin-left: -120px;
+      top: -30px;
+      color:$gray-dark;
+    }
+    text {
+      display: inline-block;
+    }
+  }
+  &__author {
+    font-size: 20px;
+  }
+  &__info {
+    font-size: 14px;
+    span {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+}

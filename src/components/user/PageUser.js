@@ -12,7 +12,6 @@ const PageUser = props => {
     field_last_name,
     field_staff_bio,
     field_position,
-    field_department,
     field_profile_facebook,
     field_profile_twitter,
     field_profile_instagram,
@@ -23,12 +22,11 @@ const PageUser = props => {
     relationships: {
       user_picture,
       field_image_hero,
-      node__blog_post
       
     }
    } = props
-   
-   const user_name = field_first_name + ' ' + field_last_name;
+   const last_name= field_last_name ?  field_last_name : '';
+   const user_name = field_first_name + ' ' + last_name;
    const field_image = user_picture == null ? '': user_picture ;
    const profileImg = field_image.localFile ? field_image.localFile.childImageSharp.fluid : null;
    return (
@@ -95,8 +93,12 @@ const PageUser = props => {
            <div className="row">
             <div className="user__bio col-md-7 col-12 col-sm-12"  dangerouslySetInnerHTML={{ __html: field_staff_bio.processed}}></div>
             <div className="user__interest col-lg-2 offset-lg-3 col-md-4 col-12 col-sm-12">
-              <h3>Interests</h3>
-              {field_interests && field_interests.map((interet, index) => (
+              { field_interests?.length > 0 && 
+               
+               <h3>Interest</h3>
+                
+              }
+              { field_interests && field_interests.map((interet, index) => (
                 <ul key= {index}>
                   <li>{interet}</li>
                 </ul>

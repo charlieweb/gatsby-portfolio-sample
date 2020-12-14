@@ -361,8 +361,11 @@
   }
 
   &[data-content-borders='top']>div {
-    padding-top: 15px;
+    padding-top: 25px;
     border-top: 1px solid;
   }
-
+  &[data-content-borders='bottom']>div {
+    padding-bottom: 45px;
+    border-bottom: 1px solid;
+  }
 }

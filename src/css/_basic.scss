@@ -1,7 +1,7 @@
-
 body {
   a {
     color: $brand-green;
+
     &:hover {
       text-decoration: none;
       color: $c-green-light;
@@ -9,12 +9,18 @@ body {
   }
 }
 
-h4, 
-h5, 
-h6 { 
+h4,
+h5,
+h6 {
   font-size: 16px;
 }
 
 .page-title {
-  margin: 20px 0;
+  padding: 50px 0;
+  font-size: 30px;
+  display: block;
+}
+
+.background[data-text-color="light"] {
+  color: $c-white;
 }

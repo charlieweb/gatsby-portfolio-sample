@@ -55,19 +55,10 @@
 
   h3 {
     font-size: 20px;
-    color:#1C292F;
+    color: $c-dark-green;
     font-size: 30px;
   }
-  .user__name {
-    padding-top: 15px;
-    font-size: 24px;
-    font-weight: 600;
-    color: $c-dark-gray;
-  }
-  .user__position {
-    font-size: 20px;
-    color: $c-dark-gray;
-  }
+
   .btn__link {
     background: $c-dark-gray;
     border-radius: 20px;

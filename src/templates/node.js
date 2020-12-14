@@ -56,12 +56,13 @@ export const query = graphql`
 const NodeTemplate = ({ data, pageContext }) => {
   const {isFront} = pageContext;
   const node = data.nodePage;
+  const pagetitle = 'page-' + node.title.replace(/\s+/g, '-').toLowerCase()
   return (
     <Layout>
       
        <Helmet
         bodyAttributes={{
-         class: isFront ? 'path-frontpage' : node.title.replace(/\s+/g, '-').toLowerCase(),
+         class: isFront ? 'path-frontpage' : pagetitle,
          }}
        />
       <SEO title={node.title}/>

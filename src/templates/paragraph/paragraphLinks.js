@@ -6,15 +6,10 @@ export const ParagraphLink = ({ node }) => {
   const links = node.field_links;
   return (
       <>
-       {
-         links && links.map(({title, uri}, index ) =>
-          <Linksblock
-            key = { index }
-            title = {title }
-            link = { uri }
+        <Linksblock
+            key = { node.id }
+            links = { links }
           />
-         )
-       }
       </>
   );
 }

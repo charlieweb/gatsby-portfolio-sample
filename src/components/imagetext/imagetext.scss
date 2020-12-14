@@ -1,0 +1,78 @@
+.image-title-text {
+  &[data-layout='horiz-img-right'] {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
+
+    .image-title-text__content {
+      width: 100%;
+      margin-bottom: 20px;
+
+      @include media-breakpoint-up(md) {
+        width: 40%;
+      }
+    }
+
+    .gatsby-image-wrapper {
+      margin: 25px;
+      z-index: 5;
+      @include media-breakpoint-up(md) {
+        margin: 45px;
+      }
+    }
+    .image-title-text__image {
+      width: 100%;
+      position: relative;
+      margin-bottom: 20px;
+
+      @include media-breakpoint-up(md) {
+        width: 60%;
+      }
+
+      &:after {
+        content: '';
+        width: 80%;
+        height: 100%;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      &[data-bg-color='gray'] {
+        &:after {
+          background: $gray-light;
+        }
+      }
+
+      &[data-bg-color='orange'] {
+        &:after {
+          background: rgba($c-orange, 0.3);
+        }
+      }
+
+      &[data-bg-color='bermuda'] {
+        &:after {
+          background: rgba($c-green-light, 0.3);
+        }
+      }
+    }
+  }
+
+  .image-title-text__title {
+    a {
+      font-size: 30px;
+      color: $c-dark-green;
+    }
+  }
+
+  .image-title-text__text {
+    color: $c-dark-green;
+    font-size: 20px;
+  }
+
+}

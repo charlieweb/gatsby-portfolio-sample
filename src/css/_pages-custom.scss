@@ -1,0 +1,86 @@
+.page-apigee-developer-portal-consulting {
+    .header__section {
+      background: rgba(#a2dc97, 0.1);
+    }
+    .hero__wrapper {
+      background: rgba(#a2dc97, 0.1);
+      padding-bottom: 60px;
+    }
+    .over__top {
+      position: relative;
+      top: -35px;
+    }
+}
+
+.page-services {
+   .header__section {
+     background: rgba($c-yellow, 0.1);
+     
+   }
+
+   .hero__wrapper {
+     background: rgba($c-yellow, 0.1);
+     padding-bottom: 60px;
+
+     .link__block {
+       text-align: center;
+       .link__item {
+         display: inline-block;
+         margin-right: 10px;
+         a {
+           color: $dark-black;
+           border-radius: 20px;
+           font-size: 14px;
+           background: $gray-light;
+           padding: 5px 20px;
+         }
+       }
+     }
+   }
+}
+
+.page-about {
+   .header__section {
+     background: rgba($c-green-light, 0.1);
+   }
+
+   .hero__wrapper {
+     background: rgba($c-green-light, 0.1);
+     padding-bottom: 60px;
+   }
+   .over__top {
+     position: relative;
+     top: -45px;
+   }
+   .shape__charts {
+     .image-title-text {
+       position: relative;
+     }
+     .image-title-text__content {
+       position: absolute;
+       text-align: center;
+       width: 100%;
+       padding: 25px 10px;
+       z-index: 10;
+       letter-spacing: -0.12px;
+       
+       p {
+         margin: 0;
+         line-height: 1.5;
+       }
+       p:first-child {
+         font-size: 60px;
+       }
+       p:last-child {
+         font-size: 20px;
+       }
+     }
+     .image-title-text__image {
+       position: relative;
+       z-index: 1;
+       img {
+         margin-bottom: 0;
+       }
+     }
+   }
+}

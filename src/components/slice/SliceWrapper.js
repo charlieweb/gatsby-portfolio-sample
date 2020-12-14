@@ -1,5 +1,6 @@
 import React from 'react';
 import BackgroundImage from 'gatsby-background-image';
+import './slicewrapper.scss';
 
 const SliceWrapper = ({backgroundColor,textColor, backgroundImage, children}) => {
  return (backgroundImage ?
@@ -15,7 +16,7 @@ const SliceWrapper = ({backgroundColor,textColor, backgroundImage, children}) =>
           {children}
         </BackgroundImage>
     :
-        <section
+        <section className="slice__wrapper"
             data-background-color={backgroundColor}
             data-text-color={textColor}
         >

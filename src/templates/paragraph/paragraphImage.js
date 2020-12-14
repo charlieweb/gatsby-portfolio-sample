@@ -9,6 +9,7 @@ export const ImageParagraph = ({ node }) => {
     align: node.field_image_alignment,
     image: field_image.localFile ? field_image.localFile.childImageSharp.fluid : null,
     imageMaxWidth: field_image.localFile ? field_image.localFile.childImageSharp.sizes.presentationWidth : null,
+    alt: node.relationships.field_image.field_image.alt,
   }
   return (
     <Image
@@ -28,6 +29,9 @@ export const paragraphImageFragment = graphql`
     field_image_alignment
     relationships {
       field_image {
+        field_image {
+            alt
+          }
         relationships {
           field_image {
             localFile {

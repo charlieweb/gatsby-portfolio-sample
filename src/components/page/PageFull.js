@@ -3,6 +3,10 @@ import ParagraphRow from '../../templates/paragraph/paragraphRow'
 import MainWrapper from '../layout/MainWrapper';
 import SliceWrapper from '../slice/SliceWrapper';
 import HeroSection from '../layout/HeroSection';
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
 const PageFull = (props) => {
   const {
     title,
@@ -33,7 +37,7 @@ const PageFull = (props) => {
     <MainWrapper>
       <div className="primary-content">
        
-        {field_body_content && field_body_content.map(row => {
+        {field_body_content && field_body_content.map((row, index) => {
           const {
              field_background_color,
              field_text_color,
@@ -46,15 +50,16 @@ const PageFull = (props) => {
              if (field_background_image) {
               backgroundImage = field_background_image.relationships.field_image.localFile.childImageSharp.fluid;
              }
-          return !field_rows ? null : field_rows.map( content => {
-            return <SliceWrapper
+          return<SliceWrapper 
               backgroundColor={field_background_color}
               backgroundImage={backgroundImage}
               textColor={field_text_color}
-              key={content.id}>
-                <ParagraphRow {...content} />
-              </SliceWrapper>
-          })
+              key= {index}
+              >
+              {field_rows && field_rows.map( (content, index) => { 
+               return <ParagraphRow key={index} {...content} />
+            })}
+          </SliceWrapper>
         })}
        
       </div>

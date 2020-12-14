@@ -28,6 +28,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-react-svg',
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-sharp`,
     {
       resolve: "gatsby-source-graphql",

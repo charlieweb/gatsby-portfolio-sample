@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout/layout'
 import Helmet from 'react-helmet'
 import SEO from '../components/seo';
-import PageWork from '../components/page/PageWork';
+import PageWork from '../components/work/PageWork';
 
 
 export const query = graphql`
@@ -86,11 +86,12 @@ export const query = graphql`
 `;
 export default function Workpage({ data }) {
   const work = data.nodeWork;
+  const title = ' page-' + work.title.replace(/\s+/g, '-').toLowerCase();
   return (
   <Layout>
     <Helmet
         bodyAttributes={{
-         class: 'path-work',
+         class: 'path-work-page' + title,
          }}
        />
       <SEO title={work.title}/>

@@ -11,6 +11,12 @@ footer {
   }
 
   .work__link {
+    margin-top: 40px;
+
+    @include media-breakpoint-up(sm) {
+      margin-top: 0;
+    }
+
     a {
       background: $light-black;
       color: $c-white;
@@ -30,14 +36,26 @@ footer {
 
   .privacy {
     font-size: 14px;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      width: auto;
+    }
 
     li {
       display: inline-block;
-      margin-left: 15px;
+      margin-left: 0;
+      margin-right: 15px;
       position: relative;
+
+      @include media-breakpoint-up(sm) {
+        margin-left: 15px;
+        margin-right: 0;
+      }
     }
+
     li:first-child::after {
-      content :'';
+      content: '';
       width: 2px;
       height: 12px;
       background: $c-white;
@@ -57,15 +75,23 @@ footer {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding-top: 60px;
-  padding-bottom: 20px;
+  padding: 70px 0;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
 
   h3 {
     font-size: 40px;
   }
 
   p {
-    max-width: 400px;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      max-width: 400px;
+    }
   }
 
 }
@@ -89,12 +115,14 @@ footer {
 
   li {
     display: inline-block;
-    
+
     color: $c-white;
     margin-right: 20px;
+
     a {
-     font-size: 0;
+      font-size: 0;
     }
+
     svg {
       font-size: 20px;
       color: $c-white;

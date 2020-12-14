@@ -3,17 +3,13 @@ import Img from 'gatsby-image';
 
 const Image = props => {
   const {
-    horizontal_align,
     image,
-    imageMaxWidth,
-    align
+    align,
+    alt,
   } = props 
   return (
     <div data-vertical-alignment={align}>
-      
-      <Img fluid={image} style={{
-                maxWidth: horizontal_align === 'center' ? imageMaxWidth : 'none'
-            }} />
+      <Img fluid={image} alt={alt}/>
     </div>
   );
 } 

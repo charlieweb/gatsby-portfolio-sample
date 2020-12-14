@@ -24,6 +24,12 @@ export const paragraphRowFragment = graphql`
                 ...paragraphNumberTileFragment
                 ...paragraphLinkFragment
                 ...paragraphUserFragment
+                ...paragraphLogoBanner
+                ...paragraphTestimonialFragment
+                ...paragraphTextLinkFragment
+                ...paragraphImgformTextFragment
+                ...paragraphWorkTileFragment
+                ...paragraphListingViewFragment
             }
         }
     }
