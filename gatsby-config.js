@@ -1,6 +1,7 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
+const theme = require("./theme") 
 module.exports = {
   siteMetadata: {
     title: `Chapter Three`,
@@ -30,6 +31,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-reflexjs`,
+      options: {
+        theme,
+      },
+    },
     {
       resolve: "gatsby-source-graphql",
       options: {

@@ -57,8 +57,6 @@ class UserList extends Component {
   }
 
    render() {
-     console.log(this.state.selectedItem)
-     console.log(this.state.UserItems)
      return (
        <>
        <div className="user__filter">
