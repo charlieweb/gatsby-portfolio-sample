@@ -42,13 +42,13 @@ module.exports = {
       options: {
         typeName: "Drupal",
         fieldName: "drupal",
-        url: `http://c3.lndo.site/graphql/`
+        url: process.env.GRAPHQL
       },
     },
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `http://c3.lndo.site/`,
+        baseUrl: process.env.BASE_URL,
         apiBase: `jsonapi`, // optional, defaults to `jsonapi`
         preview: true,
       },
