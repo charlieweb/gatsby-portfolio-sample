@@ -42,7 +42,7 @@ module.exports = {
       options: {
         typeName: "Drupal",
         fieldName: "drupal",
-        url: process.env.GRAPHQL
+        url: `https://epic-gatsby-chapter-three-ci.pantheonsite.io/graphql/`
       },
     },
     {
