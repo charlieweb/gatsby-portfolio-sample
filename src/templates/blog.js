@@ -9,7 +9,7 @@ import CategoryList from '../components/category/categorylist';
 import { Container } from 'react-bootstrap';
 import Pagination from '../components/pagination/pagination';
 
-export default function Blog({ data, pageContext }){
+const BlogPostList = ({ data, pageContext }) => {
   
   const blogs = data.blogList.nodes;
   const tags = data.tags.nodes;
@@ -70,6 +70,7 @@ export default function Blog({ data, pageContext }){
     </>
   )
 }
+export default BlogPostList
 
 export const query = graphql `
   query($skip: Int = 0, $pageSize: Int = 16, $tagRegex: String){
@@ -106,7 +107,7 @@ export const query = graphql `
         }
        }
       }
-      tags:allTaxonomyTermBlogCategory {
+      tags:allTaxonomyTermBlogCategory(limit: 6, sort: {fields: weight}) {
       nodes {
         id
         name

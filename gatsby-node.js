@@ -90,7 +90,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const jobspage = result.data.jobs.nodes;
   const userpeople = result.data.allusers.nodes;
   const categories = result.data.blogtags.edges.map(({node}) => node);
-  const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
+  const pageSize = parseInt(16);
   const pageCount = Math.ceil(result.data.blognode.totalCount/pageSize);
   const tags = result.data.blogtags.edges;
   const { createPage } = actions;
@@ -176,6 +176,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
    });
 
+   // blog listing 
+    Array.from({length: pageCount}).forEach((_, i) => {
+     createPage({
+      path: i === 0 ? `/blog` : `/blog/page/${i + 1}`,
+      component:  path.resolve(`./src/templates/blog.js`),
+      context: {
+        skip: i * pageSize,
+        currentPage: i + 1,
+        pageSize,
+        categories,
+      }
+     })
+   });
+
   // field category in blogs
   tags.forEach((tag) =>{
      if (!tag.node.path.alias) {
@@ -191,19 +205,5 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   });
-
-  Array.from({length: pageCount}).forEach((_, i) => {
-     createPage({
-      path: i === 0 ? `/blog` :  `/blog/page/${i + 1}`,
-      component:  path.resolve(`./src/templates/blog.js`),
-      context: {
-        skip: i * pageSize,
-        currentPage: i + 1,
-        pageSize,
-        categories,
-      }
-     })
-   });
-
 
 }

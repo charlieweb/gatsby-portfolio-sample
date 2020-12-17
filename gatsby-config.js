@@ -11,7 +11,7 @@ module.exports = {
      We’re looking for innovators who want to build their skills and grow with our Internet A-team.`,
     author: ``,
     twitterHandle:`@chapter_three`,
-    siteURL: `http://frontend.lndo.site`,
+    siteURL: `https://www.chapterthree.com/`,
     twitter: `https://twitter.com/chapter_three`,
     linkedin: `https://www.linkedin.com/company/chapter-three/`,
     instagram: `https://www.instagram.com/chapter_three_sf/`,
@@ -75,7 +75,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-apollo',
       options: {
-        uri: 'http://c3.lndo.site/graphql/',
+        uri: 'https://epic-gatsby-chapter-three-ci.pantheonsite.io/graphql/',
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
