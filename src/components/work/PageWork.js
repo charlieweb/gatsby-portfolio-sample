@@ -34,8 +34,8 @@ const PageWork = (props) => {
      title={field_secondary_title || title}
      
     >
-      {field_hero_rows && field_hero_rows.map(content => {
-        return <ParagraphRow {...content} key={content.id} />
+      {field_hero_rows && field_hero_rows.map((content, index) => {
+        return <ParagraphRow {...content} key={index} />
       })}
     </HeroSection>
     
@@ -43,7 +43,7 @@ const PageWork = (props) => {
       <div className="primary-content"> 
          <div className="container">
             <div className="work__categories">
-              { field_industry && field_industry.map(({name }, index) =>
+              { field_industry && field_industry.map(({ name }, index) =>
                     <div key ={index}> 
                       {name }
                     </div>

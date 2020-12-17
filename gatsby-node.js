@@ -37,7 +37,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         }
       }
 
-      workpages: allNodeWork(filter: {status: {eq: true}} sort: {order:DESC, fields:created}) {
+      workpages: allNodeWork(filter: {status: {eq: true}}) {
         nodes {
           id
           drupal_internal__nid

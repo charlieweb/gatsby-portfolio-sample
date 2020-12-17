@@ -9,7 +9,7 @@ import CategoryList from '../components/category/categorylist';
 import { Container } from 'react-bootstrap';
 import Pagination from '../components/pagination/pagination';
 
-export default function BlogPages({ data, pageContext }){
+export default function Blog({ data, pageContext }){
   
   const blogs = data.blogList.nodes;
   const tags = data.tags.nodes;

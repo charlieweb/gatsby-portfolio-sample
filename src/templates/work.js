@@ -37,19 +37,6 @@ export const query = graphql`
             }
           }
           
-          field_secondary_content {
-            id
-            field_title
-            field_background_color
-            field_text_color
-            relationships {
-              field_rows {
-                id
-                type: __typename
-                ...paragraphRowFragment
-              }
-            }
-          }
           field_hero_rows {
              type: __typename
                 ...paragraphRowFragment

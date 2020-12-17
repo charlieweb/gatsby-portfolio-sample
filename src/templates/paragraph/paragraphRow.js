@@ -36,7 +36,7 @@ export const paragraphRowFragment = graphql`
 `;
 
 const ParagraphRow = ( node ) => {
-     const paragraphs = node.relationships.field_row_content.map(getParagraph);
+     const paragraphs = node?.relationships?.field_row_content?.map(getParagraph);
      const {
         field_column_arrangement,
         field_row_top_spacing,

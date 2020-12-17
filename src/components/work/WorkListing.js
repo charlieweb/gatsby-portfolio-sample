@@ -57,7 +57,6 @@ class WorkListing extends Component {
   }
 
    render() {
-     console.log(this.state.selectedItem)
      return (
        <>
        <div className="user__filter">
