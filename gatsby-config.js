@@ -31,12 +31,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-reflexjs`,
-      options: {
-        theme,
-      },
-    },
+    `gatsby-plugin-modal-routing`,
     {
       resolve: "gatsby-source-graphql",
       options: {
@@ -50,7 +45,6 @@ module.exports = {
       options: {
         baseUrl: process.env.BASE_URL,
         apiBase: `jsonapi`, // optional, defaults to `jsonapi`
-        preview: true,
       },
     },
     {
@@ -75,7 +69,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-apollo',
       options: {
-        uri: 'https://epic-gatsby-chapter-three-ci.pantheonsite.io/graphql/',
+        uri: `https://epic-gatsby-chapter-three-ci.pantheonsite.io/graphql/`,
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
