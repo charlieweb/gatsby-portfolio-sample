@@ -13,7 +13,7 @@ const ImageText = ({ title, links, imagelayout, image, description, BGcolor, alt
           <h2 className="image-title-text__title">
           {
             links &&
-              <Link to={links.uri.replace('internal:', '')}> 
+              <Link to={links.uri_alias}> 
               {title}
               </Link>
           }
@@ -22,7 +22,8 @@ const ImageText = ({ title, links, imagelayout, image, description, BGcolor, alt
           }
           </h2>
            {
-             description && <div className="image-title-text__text" dangerouslySetInnerHTML={{__html: description}}/>
+             description &&
+              <div className="image-title-text__text" dangerouslySetInnerHTML={{__html: description}}/>
            }
         </div>
          { image &&

@@ -8,29 +8,28 @@ import { Link } from 'gatsby'
    if(submenus.length >= 1){
     
       return(
-       <li className="dropdown">
+       <li className="nav-item dropdown">
         <Link  to= { url } activeClassName="active" className="nav-link dropdown-toggle" data-toggle="dropdown">
         {label }
        </Link>
-        <ul className="dropdown-menu">
-          <li className="nav-item dropdown">
+        <ul className="dropdown-menu" aria-labelledby="collasible-nav-dropdown">
+          
             {submenus.map((item, index) => (
-            
-               <Link key= {index}  to= { item.url.path } activeClassName="active" className="nav-dropdown-item">
+              <li  key= {index} >
+               <Link  to= { item.url.path } activeClassName="active" className="dropdown-item">
                   { item.label }
                 </Link>
-                      
+               </li>     
               ))
             }
-          </li>
         </ul>
        </li>
       )
    }
    else {
     return (
-     <li>
-      <Link  to= { url } activeClassName="active" className="nav-link">
+     <li className='nav-item'>
+      <Link  to= { url } activeClassName="active" className="nav-link ">
         { label }
       </Link>
     </li>

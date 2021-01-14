@@ -1,0 +1,36 @@
+.path-frontpage {
+  .services-block {
+    [data-layout='stacked'] {
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 1px;
+        height: 100%;
+        background: $c-accent-1;
+        position: absolute;
+        left: -14px;
+      }
+    }
+
+    [data-layout='stacked']:first-of-type {
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .button {
+    color: $c-white;
+    border-radius: 20px;
+    background: $c-dark-gray;
+    padding: 5px 10px;
+    display: block;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      padding: 10px 20px;
+    }
+  }
+}

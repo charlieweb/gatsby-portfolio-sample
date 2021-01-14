@@ -2,18 +2,24 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 20px 0;
+  padding: 10px 0;
   border-bottom: 1px solid $c-black;
 }
 .work_us {
   background: $c-dark-gray;
   color: $c-white;
   border-radius: 20px;
-  padding: 5px 30px;
-  
+  padding: 10px 30px;
+  line-height: 1.5;
+  margin: 20px 10px;
+  display: block;
+  text-align: center;
   &:hover {
     text-decoration: none;
     color: $c-white;
     background: $brand-green;
+  }
+  @include media-breakpoint-up(lg) {
+    margin: 0;
   }
 }

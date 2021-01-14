@@ -14,6 +14,7 @@ import { ParagraphTextlink } from './paragraph/paragraphTextLink'
 import { paragraphImgFormText } from './paragraph/paragraphFormText'
 import { ParagraphWorkTile } from './paragraph/paragraphWorkTile'
 import { ParagraphListingView } from './paragraph/paragraphListingView'
+import { ParagraphContactForm } from './paragraph/paragraphContactForms'
 
 const components = {
   'paragraph__text': TextParagraph,
@@ -30,6 +31,7 @@ const components = {
   'paragraph__image_form_text': paragraphImgFormText,
   'paragraph__work_tile' : ParagraphWorkTile,
   'paragraph__listing_view' : ParagraphListingView,
+  'paragraph__contact_form' : ParagraphContactForm,
 }
 
 export const getParagraph = node => {

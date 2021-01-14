@@ -17,7 +17,7 @@ const Userslide = props => {
       centerMode: false,
       arrows: true,
       dots: false,
-      slidesToScroll: 5,
+      slidesToScroll: 1,
       responsive: [
       {
         breakpoint: 768,
@@ -32,8 +32,8 @@ const Userslide = props => {
         breakpoint: 480,
         settings: {
           arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
+          centerMode: false,
+          centerPadding: '20px',
           slidesToShow: 1
         }
       }

@@ -14,16 +14,21 @@ const PageFull = (props) => {
     field_hero_background_color,
     field_hero_text_color,
     relationships: {
+      field_hero_background_image,
       field_hero_rows,
       field_body_content
       
     }
   } = props;
+  let heroBackgroundImage = null;
+    if (field_hero_background_image) {
+        heroBackgroundImage = field_hero_background_image.relationships.field_image.localFile.childImageSharp.fluid;
+    }
   return (
     
     <>
     <HeroSection
-    
+     backgroundImage={heroBackgroundImage}
      backgroundColor={field_hero_background_color}
      textColor={field_hero_text_color}
      title={field_secondary_title || title}

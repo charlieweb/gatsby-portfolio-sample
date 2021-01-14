@@ -1,0 +1,95 @@
+ .header__section>.navbar {
+   padding: 0;
+ }
+
+ .dropdown-menu {
+   border: 0;
+   border-radius: 0;
+ }
+
+ .navbar-toggler span {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   background: $c-dark-gray;
+   border-radius: 3px;
+   z-index: 1;
+   transform-origin: 4px 0px;
+   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+     opacity 0.55s ease;
+ }
+
+ .navbar-light .navbar-toggler {
+   border: 0;
+ }
+
+ .navbar-toggler {
+   height: 50px;
+   padding-left: 24px;
+   border: 0;
+ }
+
+ .navbar-toggler-icon {
+   position: relative;
+ }
+
+ .navbar-toggler {
+   border: none;
+   background: transparent !important;
+ }
+
+ .navbar-toggler:hover {
+   background: transparent !important;
+ }
+
+ .navbar-toggler.icon-bar {
+   width: 22px;
+   transition: all 0.2s;
+ }
+
+ .navbar-toggler .top-bar {
+   transform: rotate(45deg);
+   transform-origin: 10% 10%;
+ }
+
+ .navbar-toggler .middle-bar {
+   opacity: 0;
+ }
+
+ .navbar-toggler .bottom-bar {
+   transform: rotate(-45deg);
+   transform-origin: 10% 90%;
+ }
+
+ .navbar-toggler.collapsed .top-bar {
+   transform: rotate(0);
+   padding-left: 20px;
+ }
+
+ .navbar-toggler.collapsed .middle-bar {
+   opacity: 1;
+ }
+
+ .navbar-toggler.collapsed .bottom-bar {
+   transform: rotate(0);
+ }
+
+
+ @media all and (min-width: 992px) {
+   .navbar .nav-item .dropdown-menu {
+     display: none;
+   }
+
+   .navbar .nav-item:hover .dropdown-menu {
+     display: block;
+   }
+
+   .navbar .nav-item .dropdown-menu {
+     margin-top: 0;
+     border-radius: 0;
+     border: 0;
+   }
+ }

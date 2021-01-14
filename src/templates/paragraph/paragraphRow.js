@@ -30,6 +30,7 @@ export const paragraphRowFragment = graphql`
                 ...paragraphImgformTextFragment
                 ...paragraphWorkTileFragment
                 ...paragraphListingViewFragment
+                ...paragraphContactFormFragment
             }
         }
     }

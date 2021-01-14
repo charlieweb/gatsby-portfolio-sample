@@ -22,6 +22,19 @@ export const query = graphql`
              type: __typename
                 ...paragraphRowFragment
           }
+          field_hero_background_image {
+            relationships {
+              field_image {
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 1500, quality: 100) {
+                       ...GatsbyImageSharpFluid_withWebp
+                    }
+                  }
+                }
+              }
+            }
+          }
           field_body_content{
             id
             field_title

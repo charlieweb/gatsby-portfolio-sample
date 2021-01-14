@@ -74,5 +74,21 @@
     color: $c-dark-green;
     font-size: 20px;
   }
+  &[data-layout='stacked'] {
+    display: flex;
+    flex-direction: column-reverse;
+    .image-title-text__title {
+      text-transform: uppercase;
+      text-align: center;
+      a {
+        font-size: 20px;
+      }
+    }
+    .image-title-text__image {
+      img {
+        margin-bottom: 5px;
+      }
+    }
+  }
 
 }

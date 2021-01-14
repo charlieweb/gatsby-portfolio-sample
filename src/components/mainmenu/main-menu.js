@@ -2,6 +2,8 @@ import React from "react"
 import { useStaticQuery, graphql} from "gatsby"
 import MenuItem from "./menuitem";
 import { Link } from 'gatsby';
+import './menu.scss';
+
 export default function Menu() {
 
   const data = useStaticQuery(graphql`
@@ -29,12 +31,10 @@ export default function Menu() {
   
   return (
     <>
-    <nav className="nav">
-     <ul className="main__menu">
+     <ul className="main__menu menu">
       <MenuItem menulist = { menudata } />
      </ul>
      <Link className="work_us" to = '/contact'>Start a project </Link>
-    </nav>
     </>
   )
 }
