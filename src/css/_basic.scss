@@ -28,3 +28,17 @@ h6 {
 [data-vertical-alignment="center"] {
   text-align: center;
 }
+
+.button {
+  color: $c-white;
+  border-radius: 20px;
+  background: $c-dark-gray;
+  padding: 5px 10px;
+  display: block;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    display: inline-block;
+    padding: 5px 20px;
+  }
+}

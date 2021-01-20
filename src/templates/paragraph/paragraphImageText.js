@@ -24,8 +24,6 @@ export const ParagraphImageText = ({ node }) =>  {
 
 }
 
-
-
 export const fragment = graphql`
 
   fragment paragraphImageTextFragment on paragraph__image_title_text {

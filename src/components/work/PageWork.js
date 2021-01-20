@@ -2,16 +2,10 @@ import React from 'react';
 import ParagraphRow from '../../templates/paragraph/paragraphRow'
 import MainWrapper from '../layout/MainWrapper';
 import SliceWrapper from '../slice/SliceWrapper'
-import HeroSection from '../layout/HeroSection'
 import './work.scss'
 const PageWork = (props) => {
   const {
-    title,
-    field_hero_background_color,
-    field_secondary_title,
-    field_hero_text_color,
     relationships: {
-      field_hero_background_image,
       field_industry,
       field_hero_rows,
       field_body_content
@@ -19,25 +13,15 @@ const PageWork = (props) => {
     }
   } = props;
   
-    let heroBackgroundImage = null;
-    if (field_hero_background_image) {
-        heroBackgroundImage = field_hero_background_image.relationships.field_image.localFile.childImageSharp.fluid;
-    }
   return (
     
     <>
-    <HeroSection
-    
-     backgroundColor={field_hero_background_color}
-     textColor={field_hero_text_color}
-     backgroundImage={heroBackgroundImage}
-     title={field_secondary_title || title}
-     
-    >
-      {field_hero_rows && field_hero_rows.map((content, index) => {
+    <div className="top__section">
+       {field_hero_rows && field_hero_rows.map((content, index) => {
         return <ParagraphRow {...content} key={index} />
       })}
-    </HeroSection>
+    </div>
+   
     
     <MainWrapper>
       <div className="primary-content"> 

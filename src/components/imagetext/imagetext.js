@@ -5,6 +5,19 @@ import Img from 'gatsby-image';
 import './imagetext.scss';
  
 const ImageText = ({ title, links, imagelayout, image, description, BGcolor, alt }) => {
+  let url
+  if (links !== null) {
+    if( links.uri.includes('internal:')) {
+     url = links.uri.replace('internal:', '');
+    
+    }
+    else if (links.uri.includes('entity:')) {
+      url = links.uri_alias
+    }
+    else {
+      url = links.uri_alias
+    }
+  }
   
   return (
     <div data-layout={imagelayout} className="image-title-text">
@@ -12,8 +25,8 @@ const ImageText = ({ title, links, imagelayout, image, description, BGcolor, alt
         <div className="image-title-text__content">
           <h2 className="image-title-text__title">
           {
-            links &&
-              <Link to={links.uri_alias}> 
+            links && 
+              <Link to={url}> 
               {title}
               </Link>
           }

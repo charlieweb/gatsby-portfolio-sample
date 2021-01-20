@@ -18,6 +18,9 @@ export const query = graphql`
         field_profile_twitter
         field_profile_instagram
         field_interests
+        field_other_info{
+          processed
+        }
         relationships {
             node__blog_post {
               title

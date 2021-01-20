@@ -1,0 +1,17 @@
+.top__content {
+  .hero__wrapper {
+   padding-top: 30px;
+   @include media-breakpoint-up(md) {
+     padding-top: 60px;
+   }
+  }
+  h1 {
+    font-size: 25px;
+    margin-top: 0;
+
+    @include media-breakpoint-up(md) {
+      font-size: 36px;
+      margin-top: 75px;
+    }
+  }
+}

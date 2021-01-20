@@ -77,3 +77,10 @@
     font-size: 18px;
   }
 }
+
+.path-job {
+  .slice__row[data-column-arrangement='two--maxmin'] {
+    padding:  20px 0 70px 0;
+    margin-bottom: 80px;
+  }
+}

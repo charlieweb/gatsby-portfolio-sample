@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import Img from 'gatsby-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './user.scss';
+import Userslide from '../userslide/userslide';
 
 const PageUser = props => {
 
@@ -19,6 +20,7 @@ const PageUser = props => {
     field_profile_drupal_org,
     field_profile_github,
     field_profile_linkedin,
+    field_other_info,
     relationships: {
       user_picture,
       field_image_hero,
@@ -38,6 +40,7 @@ const PageUser = props => {
                   <div className="profile__name">
                     <h1>{user_name}</h1>
                     <h3>{field_position}</h3>
+                     <div className="other__info"  dangerouslySetInnerHTML={{ __html: field_other_info.processed}}></div>
                   </div>
                   <div className="profile__image">
                     { profileImg &&
@@ -47,7 +50,7 @@ const PageUser = props => {
               </div>
                
                   <div className="row">
-                    <div className="col-md-3">
+                    <div className=" col-sm-12 col-md-3">
                       <div className="social__links">
                         <ul>
                           { field_profile_drupal_org && 
@@ -71,7 +74,7 @@ const PageUser = props => {
                         </ul>
                       </div>
                     </div>
-                    <div className="col-md-4 offset-md-2">
+                    <div className="col-md-4 offset-md-2 col-sm-12">
                       
                       { field_position && 
                         <div className="class__department">{field_position}</div>
@@ -106,6 +109,7 @@ const PageUser = props => {
             </div>
             </div>
         </Container>
+        <div> <Userslide></Userslide></div>
       </MainWrapper>
      </>
    )

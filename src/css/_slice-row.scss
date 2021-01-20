@@ -80,6 +80,13 @@
     }
   }
 
+  &[data-column-arrangement='two--maxmin'] {
+    @include media-breakpoint-up(md) {
+      grid-template-columns: 50% 45%;
+      grid-gap: 3em;
+    }
+  }
+
   &[data-column-arrangement='two--84'] {
     @include media-breakpoint-up(sm) {
       // 67% 33%
@@ -360,11 +367,11 @@
     grid-row-gap: 50px;
   }
 
-  &[data-content-borders='top']>div {
+  &[data-content-borders='top'] {
     padding-top: 25px;
     border-top: 1px solid;
   }
-  &[data-content-borders='bottom']>div {
+  &[data-content-borders='bottom'] {
     padding-bottom: 45px;
     border-bottom: 1px solid;
   }

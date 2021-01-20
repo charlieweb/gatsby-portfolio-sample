@@ -2,42 +2,41 @@ import React from 'react';
 import ParagraphRow from '../../templates/paragraph/paragraphRow'
 import MainWrapper from '../layout/MainWrapper';
 import SliceWrapper from '../slice/SliceWrapper';
-import HeroSection from '../layout/HeroSection';
+import './page.scss';
+import Helmet from 'react-helmet';
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
   require("smooth-scroll")('a[href*="#"]')
 }
 const PageFull = (props) => {
   const {
-    title,
-    field_secondary_title,
-    field_hero_background_color,
-    field_hero_text_color,
+    
     relationships: {
-      field_hero_background_image,
+     
       field_hero_rows,
       field_body_content
       
     }
   } = props;
-  let heroBackgroundImage = null;
-    if (field_hero_background_image) {
-        heroBackgroundImage = field_hero_background_image.relationships.field_image.localFile.childImageSharp.fluid;
-    }
+  
   return (
     
     <>
-    <HeroSection
-     backgroundImage={heroBackgroundImage}
-     backgroundColor={field_hero_background_color}
-     textColor={field_hero_text_color}
-     title={field_secondary_title || title}
-     
-    >
-      {field_hero_rows && field_hero_rows.map(content => {
-        return <ParagraphRow {...content} key={content.id} />
+    <Helmet>
+            <link
+            rel="stylesheet"
+            type="text/css"
+            charset="UTF-8"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/solid.min.css"
+            />
+    </Helmet>
+    <div className="top__content">
+      <div className="hero__wrapper">
+       {field_hero_rows && field_hero_rows.map((content, index) => {
+        return <ParagraphRow {...content} key={index} />
       })}
-    </HeroSection>
+      </div>
+    </div>
     
     <MainWrapper>
       <div className="primary-content">

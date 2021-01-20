@@ -25,4 +25,7 @@
   #textarea {
     border: 1px solid $c-dark-gray;
   }
+  select {
+    -webkit-appearance:none;
+  }
 }

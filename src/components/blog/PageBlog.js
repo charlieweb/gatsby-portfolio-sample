@@ -29,7 +29,7 @@ const PageBlog = props => {
   return (
     <MainWrapper>
       <Container>
-      <h1 className='page-title'> { title }</h1>
+      <h1 className='blog-title'> { title }</h1>
       <div className="blog__header">
          <div className="author">
           <div className="author__picture">

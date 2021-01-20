@@ -15,6 +15,12 @@ export const query = graphql`
         body {
           processed
         }
+        relationships {
+          field_hero_rows {
+             type: __typename
+                ...paragraphRowFragment
+          }
+        }
       }
   }
 `;
@@ -22,7 +28,8 @@ export default function JobPage({ data }) {
   const job = data.nodeJobPosting;
   const jobs = {
     title : job.title,
-    body : job.body
+    body : job.body,
+    rows : job.relationships.field_hero_rows
   }
   return (
   <Layout>

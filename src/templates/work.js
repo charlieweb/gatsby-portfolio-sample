@@ -12,7 +12,6 @@ export const query = graphql`
     nodeWork(id: {eq: $id}) {
         id
         title
-        field_secondary_title
         field_hero_text_color
         field_teaser_hover_text
         field_hero_background_color

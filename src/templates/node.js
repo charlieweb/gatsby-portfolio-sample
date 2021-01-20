@@ -14,7 +14,6 @@ export const query = graphql`
         path {
           alias
         }
-        field_secondary_title
         field_hero_text_color
         field_hero_background_color
         relationships {
@@ -74,9 +73,12 @@ const NodeTemplate = ({ data, pageContext }) => {
     <Layout>
       
        <Helmet
+       
         bodyAttributes={{
          class: isFront ? 'path-frontpage' : pagetitle,
          }}
+         
+         
        />
       <SEO title={node.title}/>
       <PageFull {...node} isFront = {isFront} />
