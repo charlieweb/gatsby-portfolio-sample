@@ -150,3 +150,10 @@
     color: $c-dark-gray;
   }
 }
+
+.other__info {
+  max-width: 100%;
+  @include media-breakpoint-up(md) {
+    max-width: 500px;
+  }
+}

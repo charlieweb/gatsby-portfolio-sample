@@ -40,7 +40,10 @@ const PageUser = props => {
                   <div className="profile__name">
                     <h1>{user_name}</h1>
                     <h3>{field_position}</h3>
-                     <div className="other__info"  dangerouslySetInnerHTML={{ __html: field_other_info.processed}}></div>
+                    { field_other_info && 
+                       <div className="other__info"  dangerouslySetInnerHTML={{ __html: field_other_info.processed}}></div>
+                    }
+                    
                   </div>
                   <div className="profile__image">
                     { profileImg &&
