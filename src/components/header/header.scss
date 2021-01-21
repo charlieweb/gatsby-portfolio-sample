@@ -1,10 +1,19 @@
 .header__section {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 10px 0;
   border-bottom: 1px solid $c-black;
 }
+
+.main_logo svg {
+  max-width: 270px;
+
+  @include media-breakpoint-up(lg) {
+    max-width: 300px;
+  }
+}
+
 .work_us {
   background: $c-dark-gray;
   color: $c-white;
@@ -14,11 +23,13 @@
   margin: 20px 10px;
   display: block;
   text-align: center;
+
   &:hover {
     text-decoration: none;
     color: $c-white;
     background: $brand-green;
   }
+
   @include media-breakpoint-up(lg) {
     margin: 0;
   }

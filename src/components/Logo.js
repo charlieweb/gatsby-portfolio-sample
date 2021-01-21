@@ -5,7 +5,7 @@ import Logobrand from '../assets/images/logo.svg'
 export default function Logo(){
    return (
      <>
-     <Link to="/" className="main_log">
+     <Link to="/" className="main_logo">
      <Logobrand/>
      </Link>
      </>

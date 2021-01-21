@@ -28,6 +28,7 @@ const PageUser = props => {
     }
    } = props
    const last_name= field_last_name ?  field_last_name : '';
+   const children = 'Meet More of the Chapter Three Team';
    const user_name = field_first_name + ' ' + last_name;
    const field_image = user_picture == null ? '': user_picture ;
    const profileImg = field_image.localFile ? field_image.localFile.childImageSharp.fluid : null;
@@ -112,7 +113,9 @@ const PageUser = props => {
             </div>
             </div>
         </Container>
-        <div> <Userslide></Userslide></div>
+        <div>
+           
+          <Userslide>{children}</Userslide></div>
       </MainWrapper>
      </>
    )

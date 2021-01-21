@@ -8,6 +8,7 @@ import Navbar from 'react-bootstrap/Navbar'
 
 const Header = ({ siteTitle }) => (
   <div className='header__section'>
+    
      <Navbar collapseOnSelect expand="lg">
         <Logo/>
          <Navbar.Toggle aria-controls="basic-navbar-nav">

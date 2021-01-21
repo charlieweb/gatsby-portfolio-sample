@@ -8,6 +8,7 @@ import './userslide.scss';
 const Userslide = props => {
   const {
     title,
+    children
   } = props
   const settings = {
       
@@ -86,7 +87,7 @@ const Userslide = props => {
           
           <div className='slider__wrapper'>
             <div className='container'>
-            <h3>{title}</h3>
+            <h3>{title}{children}</h3>
             </div>
             <Slider {...settings}>
             {data.allusers.nodes.map((user,index)=>(

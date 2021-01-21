@@ -1,18 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 
  function MenuLink({ label, url, links}){
    
    const submenus = links;
-
+   const [isActive, setActive] = useState("false");
+   const handleToggle = () => {
+    setActive(!isActive);
+  };
    if(submenus.length >= 1){
     
       return(
-       <li className="nav-item dropdown">
-        <Link  to= { url } activeClassName="active" className="nav-link dropdown-toggle" data-toggle="dropdown">
-        {label }
+       <li className= {`nav-item dropdown ${isActive ? "" : "show"}`}>
+        <Link  to= { url } activeClassName="active" className="nav-link dropdown-toggle" data-toggle="dropdown" >
+        {label } 
        </Link>
-        <ul className="dropdown-menu" aria-labelledby="collasible-nav-dropdown">
+       <button className="mobile__toggle" onClick={handleToggle}>text</button>
+        <ul className={`dropdown-menu ${isActive ? "" : "show"}`} aria-labelledby="collasible-nav-dropdown">
           
             {submenus.map((item, index) => (
               <li  key= {index} >
