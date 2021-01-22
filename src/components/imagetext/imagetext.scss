@@ -80,11 +80,14 @@
     .image-title-text__title {
       text-transform: uppercase;
       text-align: center;
+      font-size: 20px;
+
       a {
         font-size: 20px;
       }
     }
     .image-title-text__image {
+      padding: 25px;
       img {
         margin-bottom: 5px;
       }

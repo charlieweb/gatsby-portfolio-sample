@@ -9,7 +9,9 @@ body {
     }
   }
 }
-
+h3 {
+  font-size: 24px;
+}
 h4,
 h5,
 h6 {
@@ -41,4 +43,13 @@ h6 {
     display: inline-block;
     padding: 5px 20px;
   }
+  &:hover {
+    text-decoration: none;
+    color: $c-white;
+    background: $brand-green;
+  }
+}
+.over__top {
+   position: relative;
+   top: -120px;
 }
