@@ -50,15 +50,11 @@ export const query = graphql`
         drupal_id
         relationships {
           field_image {
-            drupal_internal__fid
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 1500, quality: 100) {
-                  ...GatsbyImageSharpFluid
-              }
-            }
-            }
-            
+             drupal_internal__fid
+             localFile {
+               publicURL
+               name
+             }
           }
         }
       }

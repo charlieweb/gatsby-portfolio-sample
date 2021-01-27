@@ -44,10 +44,9 @@ const PageBlog = props => {
               parseInt(node.attribs['data-media-source-value'])
           )
           if (imageData) {
-            return <Img 
-            key = {index}
-            fluid={imageData.localFile.childImageSharp.fluid}
-            />
+            return <>
+            <img key={index} src={imageData.localFile.publicURL} alt={imageData.localFile.name}/>
+            </>
           }
         }
       },
