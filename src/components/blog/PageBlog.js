@@ -8,6 +8,8 @@ import Col from 'react-bootstrap/Col'
 import { Container } from 'react-bootstrap';
 import ShareButtons from '../share/share';
 import useSiteMetadata from '../../hooks/use-site-metadata'
+import ReactHtmlParser from 'react-html-parser';
+
 const PageBlog = props => {
 
    const {
@@ -19,13 +21,39 @@ const PageBlog = props => {
       uid,
       field_category
       
-    }
+    },
+    bodyImages
    } = props
    const author = { ...uid }
    const field_image = uid.relationships.user_picture == null ? '': uid.relationships.user_picture ;
    const profileImg = field_image.localFile ? field_image.localFile.childImageSharp.fixed : null;
    const { siteURL, twitterHandle } = useSiteMetadata();
    const url = `${siteURL}${path.alias}`;
+   let postBody = <div dangerouslySetInnerHTML={{ __html: body.processed }} />
+  if (bodyImages) {
+    postBody = new ReactHtmlParser(body.processed, {
+      transform: function transform(node, index) {
+        if (
+          node.type === 'tag' &&
+          node.name === 'article' &&
+          node.attribs['data-media-source'] === 'image'
+        ) {
+          const imageData = bodyImages.find(
+            el =>
+              el.drupal_internal__fid ===
+              parseInt(node.attribs['data-media-source-value'])
+          )
+          if (imageData) {
+            return <Img 
+            key = {index}
+            fluid={imageData.localFile.childImageSharp.fluid}
+            />
+          }
+        }
+      },
+    })
+    
+  }
   return (
     <MainWrapper>
       <Container>
@@ -66,7 +94,7 @@ const PageBlog = props => {
       </div>
       <div className="row">
         <Col>
-          <div className="blog__body" dangerouslySetInnerHTML={{ __html: body.processed}}></div>
+          <div className="blog__body"> {postBody} </div>
         </Col>
           
        </div>
