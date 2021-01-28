@@ -1,14 +1,14 @@
 body {
   background-color: #fff;
+  font-family: $font-default;
   a {
     color: $brand-green;
-
+    font-family: $font-default;
     &:hover {
       text-decoration: none;
       color: $c-green-light;
     }
   }
-  font-family: $font-default;
 }
 h3 {
   font-size: 24px;

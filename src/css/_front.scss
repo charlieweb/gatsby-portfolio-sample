@@ -2,15 +2,17 @@
   .services-block {
     [data-layout='stacked'] {
       position: relative;
-
-      &::after {
-        content: '';
-        width: 1px;
-        height: 100%;
-        background: $c-accent-1;
-        position: absolute;
-        left: -14px;
+      @include media-breakpoint-up(lg) {
+        &::after {
+          content: '';
+          width: 1px;
+          height: 100%;
+          background: $c-accent-1;
+          position: absolute;
+          left: -14px;
+        }
       }
+      
     }
 
     [data-layout='stacked']:first-of-type {

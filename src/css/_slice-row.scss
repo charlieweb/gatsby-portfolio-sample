@@ -189,15 +189,16 @@
   }
 
   &[data-column-arrangement='six--equal'] {
-    @include media('>=390px') {
-      grid-template-columns: repeat(2, 1fr);
+    
+    @include media-breakpoint-between(200px, 590px) {
+      grid-template-columns: repeat(1, 1fr);
     }
 
-    @include media('>=585px') {
+    @include media-breakpoint-up(md) {
       grid-template-columns: repeat(3, 1fr);
     }
 
-   @include media-breakpoint-up(md) {
+   @include media-breakpoint-up(lg) {
       grid-template-columns: repeat(6, 1fr);
     }
   }

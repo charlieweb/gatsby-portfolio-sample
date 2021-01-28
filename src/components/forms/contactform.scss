@@ -20,6 +20,11 @@
     border: 0;
     max-width: 100%;
     width: 170px;
+    &:hover {
+      text-decoration: none;
+      color: $c-white;
+      background: $brand-green;
+    }
 
   }
   #textarea {
