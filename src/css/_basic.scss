@@ -10,13 +10,19 @@ body {
     }
   }
 }
+h1,
+h2 {
+  font-family: $font-default;
+}
 h3 {
+  font-family: $font-default;
   font-size: 24px;
 }
 h4,
 h5,
 h6 {
   font-size: 16px;
+  font-family: $font-default;
 }
 
 .page-title {
