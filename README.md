@@ -92,6 +92,6 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 ## 💫 Deploy
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/016fc8c6-0481-486c-8570-774053edc71b/deploy-status)](https://app.netlify.com/sites/c3-gatsby-dev/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e657c29c-d308-4ca6-8f4d-9172d2b23a5b/deploy-status)](https://app.netlify.com/sites/chapter3-gatsby-dev/deploys)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
