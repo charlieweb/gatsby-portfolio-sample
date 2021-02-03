@@ -2,6 +2,7 @@ import React from 'react';
 import MainWrapper from '../layout/MainWrapper';
 import { Container } from 'react-bootstrap';
 import Img from 'gatsby-image';
+import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './user.scss';
 import Userslide from '../userslide/userslide';
@@ -24,7 +25,7 @@ const PageUser = props => {
     relationships: {
       user_picture,
       field_image_hero,
-      
+      node__blog_post,
     }
    } = props
    const last_name= field_last_name ?  field_last_name : '';
@@ -32,6 +33,7 @@ const PageUser = props => {
    const user_name = field_first_name + ' ' + last_name;
    const field_image = user_picture == null ? '': user_picture ;
    const profileImg = field_image.localFile ? field_image.localFile.childImageSharp.fluid : null;
+   let sortdate = node__blog_post?.sort((a, b) => b.created > a.created ? 1: -1);
    return (
      <>
       <MainWrapper>
@@ -99,7 +101,17 @@ const PageUser = props => {
            </div>
            <div className="row">
             <div className="user__bio col-md-7 col-12 col-sm-12"  dangerouslySetInnerHTML={{ __html: field_staff_bio.processed}}></div>
-            <div className="user__interest col-lg-2 offset-lg-3 col-md-4 col-12 col-sm-12">
+            <div className="user__interest col-lg-3 offset-lg-2 col-md-3 col-12 col-sm-12">
+              { sortdate?.length > 0 && 
+               <h3>Blogs</h3>
+              }
+               <ul className="user__post-list" >
+                { sortdate && sortdate.slice(0,4).map((post, index) => (
+                  <>
+                    <li key = {index}><Link to={post.path.alias }>{post.title }</Link></li>
+                  </>  
+                ))}
+               </ul>
               { field_interests?.length > 0 && 
                
                <h3>Interest</h3>

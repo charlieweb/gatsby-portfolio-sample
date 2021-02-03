@@ -162,3 +162,11 @@
     max-width: 500px;
   }
 }
+.user__post-list {
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 40px;
+  li {
+    list-style-type: none;
+  }
+}
