@@ -8,7 +8,7 @@ const Image = props => {
     alt,
   } = props 
   return (
-    <div data-vertical-alignment={align}>
+    <div data-vertical-alignment={align} className="image__wrapper">
       <Img fluid={image} alt={alt}/>
     </div>
   );

@@ -2,4 +2,7 @@
   &[data-background-color='lt-grey'] {
     background:$gray-light;
   }
+  &[data-background-color='teal'] {
+    background: rgba($c-green-light, 0.1);
+  }
 }

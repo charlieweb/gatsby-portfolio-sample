@@ -21,6 +21,12 @@
       }
     }
   }
-
+  .slice__wrapper {
+    &[data-background-color='teal'] {
+      .image__wrapper {
+       padding: 12px;
+      }
+    }
+  }
+  
 }
-
