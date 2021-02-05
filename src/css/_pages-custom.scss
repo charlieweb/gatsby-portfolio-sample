@@ -180,3 +180,30 @@
     padding-bottom: 140px;
   }
 }
+
+.slice__wrapper {
+  &[data-background-color='c-green'] {
+    .slice__row>div:first-child {
+      padding: 60px 20px 0 20px;
+      background: rgba($c-green-light, 0.1);
+    }
+  }
+
+  &[data-background-color='c-orange'] {
+    .slice__row>div:first-child {
+      padding: 60px 20px 0 20px;
+      background: rgba($c-orange, 0.3);
+    }
+  }
+}
+
+.page-contact,
+.page-start-a-project {
+  .top__content .hero__wrapper {
+    padding: 0;
+  }
+
+  .contact__form {
+    padding-top: 60px;
+  }
+}

@@ -34,7 +34,7 @@ export default function Menu() {
      <ul className="main__menu menu">
       <MenuItem menulist = { menudata } />
      </ul>
-     <Link className="work_us" to = '/contact'>Start a project </Link>
+     <Link className="work_us" to = '/start-a-project'>Start a project </Link>
     </>
   )
 }

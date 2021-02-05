@@ -14,7 +14,7 @@ const { twitter, facebook, instagram, linkedin } = useSiteMetadata();
          <div className="footer__above">
            <h3>Work With US</h3>
            <p>We look forward to kicking off your next project. we can help at every stage</p>
-           <div className="work__link"><Link to='/contact'>Start a project</Link></div>
+           <div className="work__link"><Link to='/start-a-project'>Start a project</Link></div>
          </div>
          <div className="footer__menu">
             <ul>

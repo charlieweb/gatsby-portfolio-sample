@@ -8,7 +8,7 @@ const Text = props => {
   } = props 
   
   return (
-      <div data-vertical-alignment = { align } >
+      <div data-vertical-alignment = { align }  className="paragraph__text">
          <div dangerouslySetInnerHTML={{ __html: text }} />
       </div>
   );
