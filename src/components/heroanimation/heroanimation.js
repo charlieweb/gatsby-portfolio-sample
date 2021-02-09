@@ -223,13 +223,16 @@ const Heroanimation = ({children}) => {
       })
     }
 
-    // Run the stuff if a wider screen
+    // Run all the stuff if on wider screen
+    const animMobile = document.getElementsByClassName('anim-mobile')[0]
     ScrollTrigger.matchMedia({
       '(max-width: 991.98px)': function() {
         gsap.to('.anim-mobile', { autoAlpha: 1 })
       },
       '(min-width: 992px)': function() {
-        gsap.to('.anim-mobile', { autoAlpha: 0 })
+        if (getComputedStyle(animMobile).opacity === 1) {
+          gsap.to('.anim-mobile', { autoAlpha: 0 })
+        }
         pinHeader()
         setupAnimations()
         setupFinalAnimation()
