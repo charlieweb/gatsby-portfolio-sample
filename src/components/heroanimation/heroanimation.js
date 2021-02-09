@@ -230,8 +230,8 @@ const Heroanimation = ({children}) => {
         gsap.to('.anim-mobile', { autoAlpha: 1 })
       },
       '(min-width: 992px)': function() {
-        if (getComputedStyle(animMobile).opacity === 1) {
-          gsap.to('.anim-mobile', { autoAlpha: 0 })
+        if (parseInt(animMobile.style.opacity) === 1) {
+          gsap.to('.anim-mobile', { autoAlpha: 0, duration: 0 })
         }
         pinHeader()
         setupAnimations()
