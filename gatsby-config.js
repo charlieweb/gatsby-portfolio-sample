@@ -67,9 +67,15 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: 'https://chapterthree.us2.list-manage.com/subscribe/post?u=84a5d97487adda9f8f52224e2&amp;id=a58d7ea9a7'
+      }
+    },
+    {
       resolve: 'gatsby-plugin-apollo',
       options: {
-        uri: `https://epic-gatsby-chapter-three-ci.pantheonsite.io/graphql/`,
+        uri: `https://epic-gatsby-chapter-three-ci.pantheonsite.io/graphql/`
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
