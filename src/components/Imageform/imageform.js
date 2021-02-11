@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BackgroundImage from 'gatsby-background-image';
 import './imageform.scss';
-import MailchimpForm from '../mailchimp/mailchimpForm';
+import MailchimpForm from '../mailchimp/mailchimpform';
 
 const ImgFormText = ({textleft,textright, bgImage}) => {
 
