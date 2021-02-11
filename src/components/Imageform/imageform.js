@@ -21,7 +21,7 @@ const ImgFormText = ({textleft,textright, bgImage}) => {
               </div>
               <div className="right__content col-sm-12 col-md-4 offset-md-1">
                 <h3>Stay Connected</h3>
-                <MailchimpForm/>
+                <MailchimpForm></MailchimpForm>
                 <div dangerouslySetInnerHTML={{ __html: textright }} />
               </div>
           </div>
@@ -35,7 +35,6 @@ const ImgFormText = ({textleft,textright, bgImage}) => {
               </div>
               <div className="right__content col-sm-12 col-md-3 offset-md-1">
                 <h3>Stay Connected</h3>
-                <MailchimpForm/>
                 <div dangerouslySetInnerHTML={{ __html: textright }} />
               </div>
           </div>
