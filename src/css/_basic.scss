@@ -31,6 +31,9 @@ h6 {
   font-size: 30px;
   display: block;
 }
+ul {
+  padding-left: 0;
+}
 
 .background[data-text-color="light"] {
   color: $c-white;

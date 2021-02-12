@@ -32,6 +32,11 @@
   position: relative;
   a {
     color: $c-darker-green;
+    font-weight: 600;
+  }
+  a:hover {
+    color:$brand-green;
+    text-decoration: underline;
   }
   svg {
     margin-left: 10px;
@@ -41,4 +46,5 @@
 .worktile__text {
   font-size: 20px;
   color: $c-darker-green;
+  font-weight: 350;
 }

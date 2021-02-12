@@ -55,12 +55,15 @@
    margin-left: 0;
    text-align: center;
  }
+
  a.dropdown-toggle::after {
    display: none;
-    @include media-breakpoint-up(lg) {
-      display: inline-block;
-    }
+
+   @include media-breakpoint-up(lg) {
+     display: inline-block;
+   }
  }
+
  .mobile__toggle {
    display: block;
    font-size: 0;
@@ -72,7 +75,7 @@
    width: 30px;
    height: 30px;
    color: $c-orange;
-   
+
    border: solid 1px $c-orange;
    outline: 0;
 
@@ -177,7 +180,29 @@
 
    .navbar .nav-item .dropdown-menu {
      margin-top: 0;
+     padding: 0;
      border-radius: 0;
      border: 0;
+   }
+
+   .main__menu {
+     .dropdown-item {
+       padding-top: 12px;
+       padding-bottom: 12px;
+     }
+   }
+
+ }
+
+ .main__menu {
+
+   .dropdown-item.active,
+   .dropdown-item:active {
+     background-color: $brand-green;
+     color: $c-white;
+
+     &:hover {
+       color: $c-white;
+     }
    }
  }

@@ -123,7 +123,7 @@
   .secondary__section {
     padding-top: 30px;
     padding-bottom: 90px;
-    background: rgba($c-orange, 0.3);
+    background: $c-light-pink;
   }
 
   .header__section {
@@ -167,6 +167,10 @@
       color: $dark-black;
       font-size: 22px;
     }
+    a:hover {
+    color:$brand-green;
+    text-decoration: underline;
+  }
 
     svg {
       color: $brand-green;

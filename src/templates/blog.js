@@ -76,7 +76,7 @@ export const query = graphql `
   query($skip: Int = 0, $pageSize: Int = 16, $tagRegex: String){
       blogList: 
       allNodeBlogPost(filter: {status: {eq: true} relationships:{field_category:{elemMatch:{name:{regex:$tagRegex}}}}} 
-        sort: {fields:changed, order: DESC} limit: $pageSize, skip: $skip){
+        sort: {order: DESC,fields: created} limit: $pageSize, skip: $skip){
         totalCount
         nodes {
         id
