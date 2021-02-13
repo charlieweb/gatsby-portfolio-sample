@@ -81,10 +81,15 @@
   }
 
   &[data-column-arrangement='two--maxmin'] {
+    display: flex;
+    flex-direction: column-reverse;
     @include media-breakpoint-up(md) {
       grid-template-columns: 50% 45%;
       grid-gap: 3em;
+      display: grid;
+      flex-direction: inherit;
     }
+    
   }
 
   &[data-column-arrangement='two--84'] {

@@ -17,6 +17,7 @@ import { ParagraphListingView } from './paragraph/paragraphListingView'
 import { ParagraphContactForm } from './paragraph/paragraphContactForms'
 import { ParagraphContributions } from './paragraph/paragraphContribution'
 import { ParagraphContribList } from './paragraph/paragraphContribList'
+import { ParagraphVideo } from './paragraph/paragraphVideo'
 
 
 const components = {
@@ -37,6 +38,7 @@ const components = {
   'paragraph__contact_form' : ParagraphContactForm,
   'paragraph__contributions' : ParagraphContributions,
   'paragraph__contrib_list' : ParagraphContribList,
+  'paragraph__video' : ParagraphVideo,
   
 }
 

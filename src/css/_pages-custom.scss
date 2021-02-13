@@ -30,13 +30,14 @@
       .link__item {
         display: inline-block;
         margin-right: 10px;
+        font-size: 16px;
 
         a {
           color: $dark-black;
           border-radius: 20px;
-          font-size: 14px;
+          font-size: 16px;
           background: $gray-light;
-          padding: 5px 20px;
+          padding: 8px 20px;
         }
       }
     }

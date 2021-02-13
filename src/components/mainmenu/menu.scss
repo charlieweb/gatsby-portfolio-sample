@@ -1,15 +1,35 @@
  .header__section>.navbar {
    padding: 0;
+   max-width: 100%;
+   width: 100%;
 
    @include media-breakpoint-up(lg) {
+     padding: 0 20px;
      flex: 1;
      max-width: 1500px;
    }
  }
 
  .navbar-collapse {
+   background: $c-white;
+   padding-bottom: 4px;
+   margin-bottom: 22px;
+   margin: 0 6px 20px 6px;
+   background: #FFFFFF;
+   box-shadow: 0 10px 30px 10px rgba(16, 0, 0, 0.10);
+   border-radius: 0 0 25px 25px;
+
+   .main__menu>li:first-child {
+     margin-top: 0;
+   }
+
    @include media-breakpoint-up(lg) {
      justify-content: space-evenly;
+     background: inherit;
+     margin: 0;
+     padding-bottom: 0;
+     border-radius: 0;
+     box-shadow: none;
    }
  }
 
@@ -19,16 +39,17 @@
    position: relative;
    width: 100%;
 
+   &>li {
+     border-bottom: 1px solid #d8d8d8;
+   }
+
+   &>li:last-child {
+     border-bottom: 0;
+   }
+
    @include media-breakpoint-up(lg) {
      position: absolute;
 
-     &>li {
-       border-bottom: 1px solid #d8d8d8;
-     }
-
-     &>li:last-child {
-       border-bottom: 0;
-     }
    }
  }
 
@@ -43,6 +64,10 @@
  .dropdown.show>.mobile__toggle:after {
    content: '-';
 
+ }
+
+ .mobile__toggle {
+   margin-right: 18px;
  }
 
  .dropdown>.mobile__toggle:after {
@@ -98,6 +123,11 @@
    }
  }
 
+ .navbar-light .navbar-toggler {
+   padding-top: 10px;
+   padding-right: 20px;
+ }
+
  .navbar-toggler span {
    display: block;
    width: 33px;
@@ -111,6 +141,31 @@
    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
      opacity 0.55s ease;
+ }
+
+ .navbar-toggler.collapsed span {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   background: $c-dark-gray;
+   border-radius: 3px;
+   z-index: 1;
+   transform-origin: 4px 0px;
+   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+     opacity 0.55s ease;
+ }
+
+ .navbar-toggler.collapsed span:last-child {
+   width: 22px;
+   transform: translate(11px, 0);
+ }
+
+ .navbar-toggler.collapsed span:nth-last-child(2) {
+   width: 27px;
+   transform: translate(6px, 0);
  }
 
  .navbar-light .navbar-toggler {
@@ -196,6 +251,12 @@
 
  .main__menu {
 
+   .dropdown-item:hover,
+   .dropdown-item:focus {
+     background-color: $brand-green;
+     color: $c-white;
+   }
+
    .dropdown-item.active,
    .dropdown-item:active {
      background-color: $brand-green;
@@ -204,5 +265,26 @@
      &:hover {
        color: $c-white;
      }
+   }
+ }
+
+ .dropdown> {
+   .dropdown-menu {
+     padding: 0;
+     margin: 0;
+
+     .dropdown-item {
+       padding: 12px 20px;
+
+       @include media-breakpoint-up(lg) {
+         padding: 12px 27px;
+       }
+     }
+
+     @include media-breakpoint-up(lg) {
+       margin: .125rem 0 0;
+       padding: .5rem 0;
+     }
+
    }
  }

@@ -5,9 +5,14 @@
   padding: 10px 0;
   border-bottom: 1px solid $c-black;
 }
-
+.main_logo {
+  padding-left: 20px;
+  @include media-breakpoint-up(lg) {
+   padding-left: 0;
+  }
+}
 .main_logo svg {
-  max-width: 270px;
+  max-width: 250px;
 
   @include media-breakpoint-up(lg) {
     max-width: 300px;

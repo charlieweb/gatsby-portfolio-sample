@@ -1,0 +1,18 @@
+.paragraph__video {
+  .video {
+    padding-top: 56.25%;
+    position: relative;
+  }
+
+  .video>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.video-wrapper {
+  position: relative;
+  width: auto;
+  height: auto;
+}

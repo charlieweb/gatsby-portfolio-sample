@@ -32,6 +32,7 @@ export const paragraphRowFragment = graphql`
                 ...paragraphListingViewFragment
                 ...paragraphContactFormFragment
                 ...paragraphContribList
+                ...paragraphVideo
             }
         }
     }
