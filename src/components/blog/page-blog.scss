@@ -142,6 +142,11 @@
     justify-content: space-between;
   }
 }
+.blog__body {
+  img {
+    max-width: 100%;
+  }
+}
 
 
 /** blog teaser ***/
