@@ -28,7 +28,7 @@ const BlogPostList = ({ data, pageContext }) => {
        <MainWrapper>
          <Container>
            <h1>Blog</h1>
-           <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt  </p>
+           <p>Explore insights from the Chapter Three team. We post deep dives on tech, plus updates on user experience, design and content strategy.</p>
            <div className="category__content">
            <div><Link to='/blog' activeClassName="active">All</Link></div>
            { tags.map((tag) =>(
