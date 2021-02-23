@@ -73,6 +73,14 @@ module.exports = {
       }
     },
     {
+    resolve: `gatsby-plugin-hotjar`,
+    options: {
+      includeInDevelopment: false, // optional parameter to include script in development
+      id: 1248968,
+      sv: 6,
+    },
+    },
+    {
       resolve: 'gatsby-plugin-apollo',
       options: {
         uri: `https://epic-gatsby-chapter-three-ci.pantheonsite.io/graphql/`
