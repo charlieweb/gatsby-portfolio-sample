@@ -1,6 +1,8 @@
 import React from 'react';
 import { Form, Button} from 'react-bootstrap';
+import ReCAPTCHA from 'react-google-recaptcha'
 import './contactform.scss';
+const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
 export default () => {
   return(
     <>
@@ -12,6 +14,7 @@ export default () => {
         data-netlify-recaptcha="true"
         netlify-honeypot="bot-field"
       >
+
         <input type="hidden" name="form-name" value="contact"/>
         <p hidden>
           <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
@@ -41,7 +44,7 @@ export default () => {
           <Form.Label>Add a comment</Form.Label>
           <Form.Control as="textarea" rows={3} name="text-area"/>
         </Form.Group>
-        <div data-netlify-recaptcha="true"></div>
+       <ReCAPTCHA sitekey={RECAPTCHA_KEY} />
         <Button variant="primary" type="submit">
           Submit
         </Button>
