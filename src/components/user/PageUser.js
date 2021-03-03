@@ -114,7 +114,7 @@ const PageUser = props => {
                </ul>
               { field_interests?.length > 0 && 
                
-               <h3>Interest</h3>
+               <h3>Interests</h3>
                 
               }
               { field_interests && field_interests.map((interet, index) => (

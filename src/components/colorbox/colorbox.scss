@@ -6,3 +6,8 @@
 .colored-box[data-text-color='light'] {
   color: $c-white;
 }
+.colored-box {
+  a {
+    color: $c-dark-gray
+  }
+}

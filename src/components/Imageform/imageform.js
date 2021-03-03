@@ -14,17 +14,19 @@ const ImgFormText = ({textleft,textright, bgImage}) => {
             className='background__form-text'
             
         >
-        <div className="container">
-          <div className="img__form-text row">
-              <div className="left__content col-md-7 col-sm-12">
-                <div dangerouslySetInnerHTML={{ __html: textleft }} />
+          <div className="overlay">  
+            <div className="container">
+              <div className="img__form-text row">
+                  <div className="left__content col-md-7 col-sm-12">
+                    <div dangerouslySetInnerHTML={{ __html: textleft }} />
+                  </div>
+                  <div className="right__content col-sm-12 col-md-4 offset-md-1">
+                    <h3>Stay Connected</h3>
+                    <MailchimpForm></MailchimpForm>
+                    <div dangerouslySetInnerHTML={{ __html: textright }} />
+                  </div>
               </div>
-              <div className="right__content col-sm-12 col-md-4 offset-md-1">
-                <h3>Stay Connected</h3>
-                <MailchimpForm></MailchimpForm>
-                <div dangerouslySetInnerHTML={{ __html: textright }} />
-              </div>
-          </div>
+            </div>
         </div>
         </BackgroundImage>
     :
