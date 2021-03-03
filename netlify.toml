@@ -2,3 +2,5 @@
 
   BASE_URL = "http://epic-gatsby-chapter-three-ci.pantheonsite.io/"
   GRAPHQL = "http://epic-gatsby-chapter-three-ci.pantheonsite.io/graphql/"
+  SITE_RECAPTCHA_KEY = "6LeDUXAaAAAAAONuhrtz7jGttcnYQ69yDe0h2aUf"
+  SITE_RECAPTCHA_SECRET = "6LeDUXAaAAAAADD_zxF8vNapsLTzO6vWIbTSd9YZ"
