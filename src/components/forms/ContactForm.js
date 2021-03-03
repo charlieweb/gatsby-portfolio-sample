@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Button} from 'react-bootstrap';
 import ReCAPTCHA from 'react-google-recaptcha'
 import './contactform.scss';
-const RECAPTCHA_KEY = process.env.SITE_RECAPTCHA_KEY;
+const RECAPTCHA_KEY = '6LeDUXAaAAAAAONuhrtz7jGttcnYQ69yDe0h2aUf';
 export default () => {
   return(
     <>
