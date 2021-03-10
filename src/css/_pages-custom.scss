@@ -58,7 +58,24 @@
     position: relative;
     top: -45px;
   }
-
+  .slice__row.shape__charts[data-column-arrangement='four--equal']{
+    grid-column-gap: 20px;
+    h2 {
+      margin-bottom: 0;
+    }
+    .image-title-text:last-child {
+      .image-title-text__content {
+        padding-top: 15px;
+      }
+    }
+    .image-title-text:nth-last-child(3) {
+      .image-title-text__image {
+        position: relative;
+        margin-top: -20px;
+        left: -10px;
+      }
+    }
+  }
   .shape__charts {
     .image-title-text {
       position: relative;
@@ -68,7 +85,7 @@
       position: absolute;
       text-align: center;
       width: 100%;
-      padding: 25px 10px;
+      padding: 35px 10px;
       z-index: 10;
       letter-spacing: -0.12px;
 
@@ -78,7 +95,7 @@
       }
 
       p:first-child {
-        font-size: 60px;
+        font-size: 50px;
       }
 
       p:last-child {

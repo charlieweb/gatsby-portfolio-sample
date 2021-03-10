@@ -171,3 +171,10 @@
     list-style-type: none;
   }
 }
+
+.row_certification {
+   
+   .slice__row[data-column-arrangement='two--equal'] {
+     padding: 0;
+   }
+}

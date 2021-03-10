@@ -11,7 +11,6 @@ export const query = graphql`
     userUser(id: {eq: $id}) {
         field_first_name
         field_last_name
-        field_spirit_animal
         field_position
         field_short_bio
         field_profile_facebook
@@ -45,6 +44,10 @@ export const query = graphql`
                    }
                  }
                }
+            }
+            field_rows_user {
+              type: __typename
+              ...paragraphRowFragment
             }
          }
         field_staff_bio {

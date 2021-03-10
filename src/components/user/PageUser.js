@@ -1,11 +1,12 @@
-import React from 'react';
-import MainWrapper from '../layout/MainWrapper';
-import { Container } from 'react-bootstrap';
-import Img from 'gatsby-image';
-import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './user.scss';
-import Userslide from '../userslide/userslide';
+import React from 'react'
+import MainWrapper from '../layout/MainWrapper'
+import { Container } from 'react-bootstrap'
+import ParagraphRow from '../../templates/paragraph/paragraphRow'
+import Img from 'gatsby-image'
+import { Link } from 'gatsby'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import './user.scss'
+import Userslide from '../userslide/userslide'
 
 const PageUser = props => {
 
@@ -26,6 +27,7 @@ const PageUser = props => {
       user_picture,
       field_image_hero,
       node__blog_post,
+      field_rows_user,
     }
    } = props
    const last_name= field_last_name ?  field_last_name : '';
@@ -100,7 +102,15 @@ const PageUser = props => {
            })}
            </div>
            <div className="row">
-            <div className="user__bio col-md-7 col-12 col-sm-12"  dangerouslySetInnerHTML={{ __html: field_staff_bio.processed}}></div>
+             <div className="user__bio col-md-7 col-12 col-sm-12" >
+                 <div dangerouslySetInnerHTML={{ __html: field_staff_bio.processed}}></div>
+             <div className="row_certification">
+              {field_rows_user && field_rows_user.map((content, index) => {
+                return <ParagraphRow {...content} key={index} />
+              })}
+            </div>
+             </div>
+           
             <div className="user__interest col-lg-3 offset-lg-2 col-md-3 col-12 col-sm-12">
               { sortdate?.length > 0 && 
                <h3>Blogs</h3>

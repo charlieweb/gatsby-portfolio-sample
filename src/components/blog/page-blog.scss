@@ -203,3 +203,10 @@
   flex: 1;
   justify-content: flex-end;
 }
+
+.blog__services {
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}

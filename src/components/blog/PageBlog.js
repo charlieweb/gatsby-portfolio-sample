@@ -4,7 +4,6 @@ import MainWrapper from '../layout/MainWrapper'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image';
 import './page-blog.scss'
-import Col from 'react-bootstrap/Col'
 import { Container } from 'react-bootstrap';
 import ShareButtons from '../share/share';
 import useSiteMetadata from '../../hooks/use-site-metadata'
@@ -92,10 +91,17 @@ const PageBlog = props => {
           }
       </div>
       <div className="row">
-        <Col>
+        <div className="col-md-8 col-12 col-sm-12">
           <div className="blog__body"> {postBody} </div>
-        </Col>
-          
+        </div>
+           <div className="user__interest col-lg-3 offset-lg-1 col-md-3 col-12 col-sm-12">
+             <h3>Services</h3>
+             <ul className="blog__services">
+               <li><Link to='/services'>Website Strategy</Link></li>
+               <li><Link to='/services'>Development</Link></li>
+               <li><Link to='/services'>Support & Training</Link></li>
+             </ul>
+           </div>
        </div>
       </Container>
     </MainWrapper>
