@@ -1,5 +1,5 @@
 .heroanimation__wrapper {
-  height: 95vh;
+  height: 90vh;
   padding: 0 0 20px 0;
   background-color: #fdf2e3;
   position: relative;
@@ -176,10 +176,10 @@
 
   .scroller {
     width: 100vw;
-    height: 150vh;
+    height: 25vh;
   }
 
   .scroller:last-child() {
-    height: 300vh;
+    height: 50vh;
   }
 }

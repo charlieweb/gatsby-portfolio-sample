@@ -178,16 +178,7 @@ const Heroanimation = ({children}) => {
               inDot: '.dot' + index,
             })
           },
-          onLeaveBack: () => {
-            transitionAnims({
-              outAnimation: '.anim' + index,
-              outText: '.headline' + index,
-              inAnimation: '.anim' + (index - 1),
-              inText: null,
-              inLottie: lotties[index - 1],
-              inDot: '.dot' + (index - 1),
-            })
-          },
+          onLeaveBack: self => self.disable(),
         })
       })
     }
@@ -210,16 +201,7 @@ const Heroanimation = ({children}) => {
             .from('.anim-final p', { y: 20 }, '<')
             .from('.anim-final a', { y: 20 }, '<0.2')
         },
-        onLeaveBack: () => {
-          transitionAnims({
-            outAnimation: '.anim-final',
-            outText: null,
-            inAnimation: '.anims-headlines',
-            inText: null,
-            inLottie: lotties[animations.length - 1],
-            inDot: '.dot' + (animations.length - 1),
-          })
-        },
+        onLeaveBack: self => self.disable(),
       })
     }
 
