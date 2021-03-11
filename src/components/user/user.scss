@@ -173,7 +173,9 @@
 }
 
 .row_certification {
-   
+   .gatsby-image-wrapper {
+     max-width: 50px;
+   }
    .slice__row[data-column-arrangement='two--equal'] {
      padding: 0;
    }
