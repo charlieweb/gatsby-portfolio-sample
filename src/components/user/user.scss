@@ -175,6 +175,8 @@
 .row_certification {
    .gatsby-image-wrapper {
      max-width: 50px;
+     width: 100%;
+     float: right;
    }
    .slice__row[data-column-arrangement='two--equal'] {
      padding: 0;
