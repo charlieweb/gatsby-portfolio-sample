@@ -61,7 +61,7 @@ class MailchimpForm extends React.Component {
             name="email"
             value={this.state.email}
             onChange={this.handleInputChange}
-            placeholder="Enter Email to Join Our Newsletters"
+            placeholder="Enter Email to Join Our Newsletter"
           />
         </div>
         <button type="submit" className="button">Subscribe</button>
