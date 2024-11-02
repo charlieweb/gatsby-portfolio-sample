@@ -4,18 +4,18 @@ require("dotenv").config({
 const theme = require("./theme") 
 module.exports = {
   siteMetadata: {
-    title: `Chapter Three`,
+    title: `C3`,
     description: `Why you want to work here We have a down-to-earth, unconventional company culture. 
     We embrace those with a passion for doing excellent work. Have a great idea? 
     We support team members who bring strong ideas to the table and run with them.
      We’re looking for innovators who want to build their skills and grow with our Internet A-team.`,
     author: ``,
-    twitterHandle:`@chapter_three`,
-    siteURL: `https://www.chapterthree.com/`,
-    twitter: `https://twitter.com/chapter_three`,
-    linkedin: `https://www.linkedin.com/company/chapter-three/`,
-    instagram: `https://www.instagram.com/chapter_three_sf/`,
-    facebook: `https://www.facebook.com/Ch.Three`,
+    twitterHandle:`@Site`,
+    siteURL: `https://www.site3.com/`,
+    twitter: `https://twitter.com/site`,
+    linkedin: `https://www.linkedin.com/company/c3/`,
+    instagram: `https://www.instagram.com/c3/`,
+    facebook: `https://www.facebook.com/C3`,
 
 
   },
@@ -37,7 +37,7 @@ module.exports = {
       options: {
         typeName: "Drupal",
         fieldName: "drupal",
-        url: `https://epic-gatsby-chapter-three-ci.pantheonsite.io/graphql/`
+        url: `http://c3.lndo.site/graphql/`
       },
     },
     {
@@ -83,7 +83,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-apollo',
       options: {
-        uri: `https://epic-gatsby-chapter-three-ci.pantheonsite.io/graphql/`
+        uri: `http://c3.lndo.site/graphql/`
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
