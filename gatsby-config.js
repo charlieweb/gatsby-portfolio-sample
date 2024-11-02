@@ -57,8 +57,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Chapter Three`,
-        short_name: `chapterthree`,
+        name: `C3`,
+        short_name: `c3`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#15616f`,
@@ -69,14 +69,14 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
-        endpoint: 'https://chapterthree.us2.list-manage.com/subscribe/post?u=84a5d97487adda9f8f52224e2&amp;id=a58d7ea9a7'
+        endpoint: ''
       }
     },
     {
     resolve: `gatsby-plugin-hotjar`,
     options: {
       includeInDevelopment: false, // optional parameter to include script in development
-      id: 1248968,
+      id: 12345,
       sv: 6,
     },
     },
